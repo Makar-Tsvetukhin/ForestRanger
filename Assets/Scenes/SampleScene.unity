@@ -221,7 +221,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 238882340}
-  - component: {fileID: 238882339}
   - component: {fileID: 238882338}
   - component: {fileID: 238882337}
   m_Layer: 6
@@ -318,19 +317,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &238882339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 238882336}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e17af11a72f73c4d8ca9a486b31f465, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <ThisCamera>k__BackingField: {fileID: 747529420}
 --- !u!4 &238882340
 Transform:
   m_ObjectHideFlags: 0
@@ -882,7 +868,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1521893634}
-  - component: {fileID: 1521893636}
   - component: {fileID: 1521893633}
   - component: {fileID: 1521893635}
   m_Layer: 0
@@ -994,19 +979,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!114 &1521893636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521893632}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e17af11a72f73c4d8ca9a486b31f465, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <ThisCamera>k__BackingField: {fileID: 747529420}
 --- !u!1 &1765550430
 GameObject:
   m_ObjectHideFlags: 0
