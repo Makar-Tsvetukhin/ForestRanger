@@ -7,7 +7,6 @@ public class DragCamera : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
 {
 	[field: SerializeField] private Camera ThisCamera { get; set; }
 	private Camera MainCamera { get; set; }
-	private Vector3 CameraOffset { get; set; }
 	private Vector3 StoneOffset { get; set; }
 
 	private void Start()
@@ -19,13 +18,15 @@ public class DragCamera : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
 	public void OnBeginDrag(PointerEventData eventData)
 	{
 		ThisCamera.transform.position = GetStoneWorldPosition();
+
+		StoneOffset = transform.position - GetMouseScreenPosition();
 	}
 
 	public void OnDrag(PointerEventData eventData)
 	{
 		Vector3 mouseWorldPosition = GetMouseScreenPosition();
 
-		transform.position = mouseWorldPosition;
+		transform.position = mouseWorldPosition + StoneOffset;
 		ThisCamera.transform.position = GetStoneWorldPosition();
 	}
 
