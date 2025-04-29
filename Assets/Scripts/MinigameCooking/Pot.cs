@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class Pot : MonoBehaviour
 {
-	/*[field: SerializeField]*/ private MinigameHandler mHandler { get; set; }
+
 	[field: SerializeField] private List<Ingredient> NeededIngredients;
 
 	private List<Ingredient> Ingredients = new List<Ingredient>();
+	private MinigameState GameState { get; set; }
 	private Timer CookingTimer { get; set; } = new Timer(5);
 	private int RightIngredients { get; set; }
 	private bool IsStartCooking { get; set; }
-	private bool IsGameEnd { get; set; }
 
 	private void Start()
 	{
-		mHandler = GameObject.FindGameObjectWithTag("MinigameHandler").GetComponent<MinigameHandler>();
+		GameState = GetComponent<MinigameState>();
 
 		RightIngredients = 0;
 
 		IsStartCooking = false;
-
-		IsGameEnd = false;
 
 		CookingTimer.OnTimerEnd += CookingResult;
 	}
@@ -48,6 +46,8 @@ public class Pot : MonoBehaviour
 
 	public void CookingResult()
 	{
+		if (GameState.GetGameStatus()) return;
+
 		IsStartCooking = false;
 		CookingTimer.ResetTimer(false);
 
@@ -75,11 +75,9 @@ public class Pot : MonoBehaviour
 		if (RightIngredients == NeededIngredients.Count)
 		{
 			SuccessfulCooking();
-			if (!IsGameEnd)
+			if (!GameState.GetGameStatus())
 			{
-				mHandler.WinGame();
-				IsGameEnd = true;
-				Debug.Log(mHandler.GetGameWins());
+				GameState.WinGame();
 			}
 		}
 		else UnsuccessfulCooking();

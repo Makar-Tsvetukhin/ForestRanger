@@ -52,7 +52,7 @@ public class Ingredient : MonoBehaviour, IPointerClickHandler
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.transform.tag == "Pot")
+		if (collision.transform.tag == "MiniGame")
 		{
 			collision.gameObject.GetComponent<Pot>().AddIngredient(this);
 			Destroy(gameObject);
