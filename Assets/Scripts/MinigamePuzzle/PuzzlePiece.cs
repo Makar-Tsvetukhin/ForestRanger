@@ -51,6 +51,7 @@ public class PuzzlePiece : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
 			transform.position = Placement.gameObject.transform.position;
 			transform.rotation = Placement.gameObject.transform.rotation;
 			InPlace = true;
+			Placement.GetComponent<Placement>().Done();
 		}
 		else transform.position = StartPosition;
 	}
