@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e47b455b723a21419ffdf62bebbe660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: ExamBlank
+  SceneName: PuzzleExamScene
 --- !u!212 &107965030
 SpriteRenderer:
   m_ObjectHideFlags: 0

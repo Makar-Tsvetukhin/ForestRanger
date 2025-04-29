@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hut.unity
     guid: 6aa8542919f2a9e40996864002787ce2
+  - enabled: 1
+    path: Assets/Scenes/PuzzleExamScene.unity
+    guid: e59bb245132d6e24e8d122b3183412af
   m_configObjects: {}
