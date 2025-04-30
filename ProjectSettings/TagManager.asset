@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - trash
-  - food
+  - Pot
+  - MinigameHandler
+  - MiniGame
   layers:
   - Default
   - TransparentFX
