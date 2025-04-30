@@ -1323,6 +1323,10 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3735584029405634588, guid: 98ea13ab915535b4aba1fa69a69e8126, type: 3}
+      propertyPath: m_Name
+      value: "\u043B\u0443\u043F\u0430"
+      objectReference: {fileID: 0}
     - target: {fileID: 4738852841839918839, guid: 98ea13ab915535b4aba1fa69a69e8126, type: 3}
       propertyPath: <ThisCamera>k__BackingField
       value: 
