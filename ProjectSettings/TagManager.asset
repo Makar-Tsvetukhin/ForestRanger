@@ -7,6 +7,10 @@ TagManager:
   - Pot
   - MinigameHandler
   - MiniGame
+  - trash
+  - food
+  - edibl
+  - inedible
   layers:
   - Default
   - TransparentFX
