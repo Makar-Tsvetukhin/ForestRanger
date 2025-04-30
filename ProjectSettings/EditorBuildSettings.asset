@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ExamScene.unity
     guid: 2979b0f296f4de84886422a74f68dc35
   - enabled: 1
-    path: Assets/Scenes/trainingminigames.unity
+    path: Assets/Scenes/edibl_inedible.unity
     guid: 8ea0475e8c9a24449b1d5ffa977ae413
   m_configObjects: {}
