@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class Pot : MonoBehaviour
 {
-	[field: SerializeField] private OpenEndMinigame EndMinigame;
 	[field: SerializeField] private List<Ingredient> NeededIngredients;
 
 	private List<Ingredient> Ingredients = new List<Ingredient>();
@@ -91,16 +90,12 @@ public class Pot : MonoBehaviour
 	{
 		Debug.Log("Готовка не удалась");
 
-		EndMinigame.LoseMinigame();
-
 		PourIngredients();
 	}
 
 	private void SuccessfulCooking()
 	{
 		Debug.Log("Готовка удалась");
-
-		EndMinigame.WinMinigame();
 
 		PourIngredients();
 	}

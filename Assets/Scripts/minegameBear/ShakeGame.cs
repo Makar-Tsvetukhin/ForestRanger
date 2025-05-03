@@ -87,7 +87,11 @@ public class ShakeGame : MonoBehaviour
         {
             resultText.color = Color.yellow;
             resultText.text = "Вас съел медведь... Поражение!";
-        }
+			if (!(minigameState.GetGameStatus() == -1))
+			{
+				minigameState.LoseGame();
+			}
+		}
     }
 
     private void UpdateTimerUI()

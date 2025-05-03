@@ -62,7 +62,11 @@ public class FoodSortingManager : MonoBehaviour
         else
         {
             resultText.color = Color.yellow;
-        }
+			if (!(minigameState.GetGameStatus() == -1))
+			{
+				minigameState.LoseGame();
+			}
+		}
     }
 
     private void RestartScene()

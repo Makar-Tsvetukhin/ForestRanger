@@ -23,6 +23,14 @@ public class MinigameState : MonoBehaviour
 		mHandler.WinGame(GameIndex);
 	}
 
+	public void LoseGame()
+	{
+		if (IsGameEnd == -1) return;
+
+		IsGameEnd = -1;
+		mHandler.LoseGame(GameIndex);
+	}
+
 	public void LoadWinGame()
 	{
 		IsGameEnd = 1;

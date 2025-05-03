@@ -43,6 +43,11 @@ public class MinigameHandler : MonoBehaviour
 		Instance.MiniGamesEnd[gameindex] = -1;
 	}
 
+	public int GetGameStatus(int gameindex)
+	{
+		return Instance.MiniGamesEnd[gameindex];
+	}
+
 	public int GetGameWins()
 	{
 		int t = 0;
@@ -62,5 +67,7 @@ public class MinigameHandler : MonoBehaviour
 		GameState = GameObject.FindGameObjectWithTag(MainGameElementTag).GetComponent<MinigameState>();
 
 		if (MiniGamesEnd[GameState.GetGameIndex()] == 1) GameState.LoadWinGame();
+
+		if (MiniGamesEnd[GameState.GetGameIndex()] == -1) GameState.LoadLoseGame();
 	}
 }
