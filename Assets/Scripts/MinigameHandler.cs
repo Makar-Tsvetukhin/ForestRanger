@@ -60,6 +60,11 @@ public class MinigameHandler : MonoBehaviour
 		return t;
 	}
 
+	public void RestartGame()
+	{
+		for (int i = 0; i < 5; i++) MiniGamesEnd[i] = 0;
+	}
+
 	private void NewSceneLoad(Scene scene, LoadSceneMode mode)
 	{
 		if (GameObject.FindGameObjectWithTag(MainGameElementTag) == null) return;
