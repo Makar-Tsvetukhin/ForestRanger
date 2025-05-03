@@ -1,20 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class OpenScene : MonoBehaviour, IPointerClickHandler
 {
-	[field: SerializeField] private string SceneName;
+	[field: SerializeField] protected string SceneName;
 
 
-	public void OnPointerClick(PointerEventData eventData)
+	public virtual void OnPointerClick(PointerEventData eventData)
+	{
+		CheckLoadScene();
+	}
+
+	protected virtual void CheckLoadScene()
 	{
 		StartCoroutine(LoadScene(SceneName));
 	}
 
-	private IEnumerator LoadScene(string scenename)
+	protected virtual IEnumerator LoadScene(string scenename)
 	{
 		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scenename);
 

@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Pot : MonoBehaviour
 {
-
 	[field: SerializeField] private List<Ingredient> NeededIngredients;
 
 	private List<Ingredient> Ingredients = new List<Ingredient>();
@@ -46,7 +47,7 @@ public class Pot : MonoBehaviour
 
 	public void CookingResult()
 	{
-		if (GameState.GetGameStatus()) return;
+		if (GameState.GetGameStatus() == 1) return;
 
 		IsStartCooking = false;
 		CookingTimer.ResetTimer(false);
@@ -75,7 +76,7 @@ public class Pot : MonoBehaviour
 		if (RightIngredients == NeededIngredients.Count)
 		{
 			SuccessfulCooking();
-			if (!GameState.GetGameStatus())
+			if (!(GameState.GetGameStatus() == 1))
 			{
 				GameState.WinGame();
 			}
