@@ -78,7 +78,7 @@ public class ShakeGame : MonoBehaviour
         {
             resultText.color = Color.green;
             resultText.text = "Вы отпугнули медведя! Победа!";
-            if (!minigameState.GetGameStatus())
+            if (!(minigameState.GetGameStatus() == 1))
             {
                 minigameState.WinGame();
             }

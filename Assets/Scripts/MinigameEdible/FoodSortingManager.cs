@@ -54,7 +54,7 @@ public class FoodSortingManager : MonoBehaviour
         if (_correctlyMoved == _totalItems)
         {
             resultText.color = Color.green;
-            if (!minigameState.GetGameStatus())
+            if (!(minigameState.GetGameStatus() == 1))
             {
                 minigameState.WinGame();
             }

@@ -9,7 +9,7 @@ public class MinigameHandler : MonoBehaviour
 
 	private static MinigameHandler Instance;
 
-	private List<bool> MiniGamesEnd = new List<bool>();
+	private List<int> MiniGamesEnd = new List<int>();
 	private MinigameState GameState { get; set; }
 	private int GameWins { get; set; }
 
@@ -24,7 +24,7 @@ public class MinigameHandler : MonoBehaviour
 
 			SceneManager.sceneLoaded += NewSceneLoad;
 
-			for (int i = 0; i < 5; i++) MiniGamesEnd.Add(false);
+			for (int i = 0; i < 5; i++) MiniGamesEnd.Add(0);
 		}
 		else
 		{
@@ -35,7 +35,12 @@ public class MinigameHandler : MonoBehaviour
 
 	public void WinGame(int gameindex)
 	{
-		Instance.MiniGamesEnd[gameindex] = true;
+		Instance.MiniGamesEnd[gameindex] = 1;
+	}
+
+	public void LoseGame(int gameindex)
+	{
+		Instance.MiniGamesEnd[gameindex] = -1;
 	}
 
 	public int GetGameWins()
@@ -44,7 +49,7 @@ public class MinigameHandler : MonoBehaviour
 
 		for (int i = 0; i < Instance.MiniGamesEnd.Count; i++)
 		{
-			if (Instance.MiniGamesEnd[i]) t++;
+			if (Instance.MiniGamesEnd[i] == 1) t++;
 		}
 
 		return t;
@@ -56,6 +61,6 @@ public class MinigameHandler : MonoBehaviour
 
 		GameState = GameObject.FindGameObjectWithTag(MainGameElementTag).GetComponent<MinigameState>();
 
-		if (MiniGamesEnd[GameState.GetGameIndex()]) GameState.LoadWinGame();
+		if (MiniGamesEnd[GameState.GetGameIndex()] == 1) GameState.LoadWinGame();
 	}
 }

@@ -1949,7 +1949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e47b455b723a21419ffdf62bebbe660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: ExamBlank
+  SceneName: Hut
 --- !u!212 &882474727
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2204,6 +2204,7 @@ GameObject:
   - component: {fileID: 1006429864}
   - component: {fileID: 1006429863}
   - component: {fileID: 1006429867}
+  - component: {fileID: 1006429868}
   - component: {fileID: 1006429862}
   - component: {fileID: 1006429866}
   m_Layer: 0
@@ -2260,6 +2261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9d186d64bd88a41a13265a3dbb049c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EndMinigame: {fileID: 1006429868}
   NeededIngredients:
   - {fileID: 1882315794}
   - {fileID: 496322735}
@@ -2372,6 +2374,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameIndex: 2
+--- !u!114 &1006429868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006429861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ca7d314bd792f4aa3d0a444a02e2f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1196978764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2391,7 +2405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1196978765
 AudioListener:
   m_ObjectHideFlags: 0

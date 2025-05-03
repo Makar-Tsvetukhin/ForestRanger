@@ -6,29 +6,34 @@ public class MinigameState : MonoBehaviour
 {
 	[field: SerializeField] private int GameIndex;
 	private MinigameHandler mHandler { get; set; }
-	private bool IsGameEnd { get; set; }
+	private int IsGameEnd { get; set; }
 
 	private void Start()
 	{
 		mHandler = GameObject.FindGameObjectWithTag("MinigameHandler").GetComponent<MinigameHandler>();
 
-		IsGameEnd = false;
+		IsGameEnd = 0;
 	}
 
 	public void WinGame()
 	{
-		if (IsGameEnd) return;
+		if (IsGameEnd == 1) return;
 
-        IsGameEnd = true;
+        IsGameEnd = 1;
 		mHandler.WinGame(GameIndex);
 	}
 
 	public void LoadWinGame()
 	{
-		IsGameEnd = true;
+		IsGameEnd = 1;
 	}
 
-	public bool GetGameStatus()
+	public void LoadLoseGame()
+	{
+		IsGameEnd = -1;
+	}
+
+	public int GetGameStatus()
 	{
 		return IsGameEnd;
 	}

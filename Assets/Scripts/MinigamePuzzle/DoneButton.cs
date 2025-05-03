@@ -15,7 +15,7 @@ public class DoneButton : MonoBehaviour, IPointerClickHandler
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		if (GameState.GetGameStatus())
+		if (GameState.GetGameStatus() == 1)
 		{
 			Debug.Log("Халупа готова");
 			return;
