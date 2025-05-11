@@ -15,9 +15,14 @@ public class ShakeGame : MonoBehaviour
     public TextMeshProUGUI resultText;
     public Button restartButton;
     public MinigameState minigameState;
+    public float screenShakeIntensity = 0.1f;
+    public float screenShakeDuration = 0.2f;
+    public Transform objectToShake; 
 
     private float currentTime;
     private bool isGameOver = false;
+    private Vector3 originalPosition;
+    private float shakeTimer = 0f;
 
     private void Start()
     {
@@ -26,8 +31,13 @@ public class ShakeGame : MonoBehaviour
         resultPanel.SetActive(false);
         restartButton.onClick.AddListener(RestartGame);
 
+        if (objectToShake != null)
+        {
+            originalPosition = objectToShake.localPosition;
+        }
+
 #if !UNITY_EDITOR
-    shakeSlider.interactable = false;
+        shakeSlider.interactable = false;
 #endif
     }
 
@@ -54,6 +64,17 @@ public class ShakeGame : MonoBehaviour
         {
             shakeSlider.value -= shakeDecreaseSpeed * Time.deltaTime;
         }
+
+        if (shakeTimer > 0 && objectToShake != null)
+        {
+            objectToShake.localPosition = originalPosition + Random.insideUnitSphere * screenShakeIntensity;
+            shakeTimer -= Time.deltaTime;
+        }
+        else if (objectToShake != null)
+        {
+            shakeTimer = 0f;
+            objectToShake.localPosition = originalPosition;
+        }
     }
 
     private void FixedUpdate()
@@ -66,6 +87,7 @@ public class ShakeGame : MonoBehaviour
         if (shakeForce > shakeThreshold)
         {
             shakeSlider.value += shakeForce * shakeFillSpeed * Time.deltaTime;
+            shakeTimer = screenShakeDuration;
         }
     }
 
@@ -87,11 +109,11 @@ public class ShakeGame : MonoBehaviour
         {
             resultText.color = Color.yellow;
             resultText.text = "Вас съел медведь... Поражение!";
-			if (!(minigameState.GetGameStatus() == -1))
-			{
-				minigameState.LoseGame();
-			}
-		}
+            if (!(minigameState.GetGameStatus() == -1))
+            {
+                minigameState.LoseGame();
+            }
+        }
     }
 
     private void UpdateTimerUI()
