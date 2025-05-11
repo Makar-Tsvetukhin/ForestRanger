@@ -23,4 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/edibl_inedible.unity
     guid: 8ea0475e8c9a24449b1d5ffa977ae413
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 9abe5121ac865f44c8adbd735c23f40e, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 49a6360f813af71478ef0fd1ffd16848, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: cb1eff7f8cb314f45aec472801519e80, type: 2}
+  m_UseUCBPForAssetBundles: 0
