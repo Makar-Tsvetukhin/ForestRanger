@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ranger : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Ranger : MonoBehaviour
 	private bool IsEventClose { get; set; } = false;
 
 
-	private void OnCollisionEnter2D(Collision2D collision)
+	/*private void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.GetComponent<RangerOpenScene>() != null)
 		{
@@ -29,7 +30,7 @@ public class Ranger : MonoBehaviour
 			IsEventClose = false;
 			NewOpenScene = null;
 		}
-	}
+	}*/
 
 	private void Update()
 	{
@@ -38,13 +39,20 @@ public class Ranger : MonoBehaviour
 			Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
-			if (hit.collider != null)
+			if (/*hit.collider != null && */hit.collider.gameObject.GetComponent<RangerOpenScene>() != null)
 			{
+				IsEventClose = true;
+				NewOpenScene = hit.collider.gameObject.GetComponent<RangerOpenScene>();
+
 				TargetPosition = new Vector3(hit.point.x, hit.point.y, 0);
 				if (TargetPosition != transform.position)
 				{
 					IsMoving = true;
 				}
+			}
+			else
+			{
+				IsEventClose = false;
 			}
 		}
 
@@ -58,6 +66,7 @@ public class Ranger : MonoBehaviour
 				if (IsEventClose)
 				{
 					NewOpenScene.LoadNewScene();
+					IsEventClose = false;
 				}
 			}
 		}
