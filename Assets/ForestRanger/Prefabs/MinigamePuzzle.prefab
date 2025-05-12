@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6656527862386381344}
   - component: {fileID: 9216342050755738735}
   - component: {fileID: 1627434888557660488}
+  - component: {fileID: -970120351865249870}
   - component: {fileID: 6637269441860691852}
   m_Layer: 0
   m_Name: MinigamePuzzle
@@ -105,6 +106,21 @@ MonoBehaviour:
   SceneName: PuzzleExamScene
   GameIsEnd: {fileID: 0}
   GameIndex: 3
+--- !u!114 &-970120351865249870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160669682816788536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1425c5aadd1f05846bd827ec169c8a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NotDo: {fileID: -5796681024104259944, guid: 6f8e92aaea36c2747ba266fea41ce46e, type: 3}
+  Do: {fileID: -8842615605006729978, guid: 0a315564f44040641aaa9b4db9e07f5e, type: 3}
+  GameIndex: 3
 --- !u!58 &6637269441860691852
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -151,6 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2989818471537405867}
   - component: {fileID: 2481229921111454406}
+  - component: {fileID: 8955615816225381602}
   m_Layer: 0
   m_Name: Indicator
   m_TagString: Untagged
@@ -228,3 +245,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8955615816225381602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8718703338341014752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1425c5aadd1f05846bd827ec169c8a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NotDo: {fileID: 5928890741358914781, guid: 256e3cadad47ba44b968ad48648f8755, type: 3}
+  Do: {fileID: 0}
+  GameIndex: 3

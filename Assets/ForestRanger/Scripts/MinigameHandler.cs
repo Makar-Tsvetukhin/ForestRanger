@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,10 @@ public class MinigameHandler : MonoBehaviour
 	private List<int> MiniGamesEnd = new List<int>();
 	private MinigameState GameState { get; set; }
 	private int GameWins { get; set; }
+
+	public event Action OnUpdate;
+
+
 
 	private void Awake()
 	{
@@ -36,11 +41,15 @@ public class MinigameHandler : MonoBehaviour
 	public void WinGame(int gameindex)
 	{
 		Instance.MiniGamesEnd[gameindex] = 1;
+
+		OnUpdate?.Invoke();
 	}
 
 	public void LoseGame(int gameindex)
 	{
 		Instance.MiniGamesEnd[gameindex] = -1;
+
+		OnUpdate?.Invoke();
 	}
 
 	public int GetGameStatus(int gameindex)

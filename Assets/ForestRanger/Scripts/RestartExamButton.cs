@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class RestartExamButton : MonoBehaviour, IPointerClickHandler
 {
 	[field: SerializeField] private GameObject EndImage;
+	[field: SerializeField] private MiniBlank Blank;
 	private MinigameHandler mHandler;
 
 
@@ -17,6 +18,7 @@ public class RestartExamButton : MonoBehaviour, IPointerClickHandler
 	public void OnPointerClick(PointerEventData eventData)
 	{
 		mHandler.RestartGame();
+		Blank.RestartGame();
 		EndImage.SetActive(false);
 		gameObject.SetActive(false);
 	}
