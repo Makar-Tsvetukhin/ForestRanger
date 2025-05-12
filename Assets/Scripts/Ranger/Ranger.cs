@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class Ranger : MonoBehaviour
 {
+	private RangerOpenScene NewOpenScene { get; set; }
 	private Vector3 TargetPosition { get; set; }
 	private bool IsMoving { get; set; } = false;
 	private bool IsEventClose { get; set; } = false;
-	private RangerOpenScene NewOpenScene { get; set; }
 
 
 	private void OnCollisionEnter2D(Collision2D collision)
@@ -52,7 +52,7 @@ public class Ranger : MonoBehaviour
 		{
 			transform.position = Vector2.MoveTowards(transform.position, TargetPosition, Time.deltaTime * 3);
 
-			if (transform.position == TargetPosition)
+			if (/*transform.position == TargetPosition*/IsEventClose)
 			{
 				IsMoving = false;
 				if (IsEventClose)
