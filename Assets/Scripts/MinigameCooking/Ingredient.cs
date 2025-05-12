@@ -7,6 +7,7 @@ public class Ingredient : MonoBehaviour, IPointerClickHandler
 {
 	[field: SerializeField] private string Name;
 	[field: SerializeField] private GameObject DestinationPoint;
+	[field: SerializeField] private GameObject ThisIngredient;
 	private GameObject CreatedIngredient {  get; set; }
 	private string StartName { get; set; }
 	private bool IsMoving { get; set; } = false;
@@ -18,7 +19,7 @@ public class Ingredient : MonoBehaviour, IPointerClickHandler
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		CreatedIngredient = Instantiate(gameObject, transform.position, Quaternion.identity);
+		CreatedIngredient = Instantiate(gameObject/*ThisIngredient*/, transform.position/*UIPointToScene()*/, Quaternion.identity);
 		CreatedIngredient.GetComponent<Ingredient>().StartMove();
 	}
 
@@ -57,5 +58,10 @@ public class Ingredient : MonoBehaviour, IPointerClickHandler
 			collision.gameObject.GetComponent<Pot>().AddIngredient(this);
 			Destroy(gameObject);
 		}
+	}
+
+	private Vector3 UIPointToScene()
+	{
+		return Camera.main.ScreenToWorldPoint(transform.position);
 	}
 }
