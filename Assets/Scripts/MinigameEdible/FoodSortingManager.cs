@@ -9,27 +9,22 @@ public class FoodSortingManager : MonoBehaviour
     public GameObject resultsPanel;
     public TextMeshProUGUI resultText;
     public Button finishButton;
-    public RandomPrefabSpawner spawner;
     public Button restartButton;
     public MinigameState minigameState;
 
-    private int _totalItems;
+    [SerializeField]
+    private int _totalItems = 0; 
+
     private int _movedItems;
     private int _correctlyMoved;
 
     void Start()
     {
-        minigameState=GetComponent<MinigameState>();
+        minigameState = GetComponent<MinigameState>();
         finishButton.onClick.AddListener(CheckResults);
         restartButton.onClick.AddListener(RestartScene);
         resultsPanel.SetActive(false);
-        spawner.OnSpawnFinished += HandleSpawnFinished;
-        spawner.SpawnPrefabs();
-    }
 
-    private void HandleSpawnFinished(int spawnedCount)
-    {
-        _totalItems = spawnedCount;
         UpdateProgress();
     }
 
@@ -62,11 +57,11 @@ public class FoodSortingManager : MonoBehaviour
         else
         {
             resultText.color = Color.yellow;
-			if (!(minigameState.GetGameStatus() == -1))
-			{
-				minigameState.LoseGame();
-			}
-		}
+            if (!(minigameState.GetGameStatus() == -1))
+            {
+                minigameState.LoseGame();
+            }
+        }
     }
 
     private void RestartScene()
