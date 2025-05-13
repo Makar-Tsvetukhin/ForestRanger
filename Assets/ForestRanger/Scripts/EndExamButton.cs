@@ -8,6 +8,7 @@ public class EndExamButton : MonoBehaviour, IPointerClickHandler
 {
 	[field: SerializeField] private GameObject EndImage;
 	[field: SerializeField] private GameObject RestartButton;
+	[field: SerializeField] private GameObject WinField;
 	private MinigameHandler mHandler;
 	private TextMeshProUGUI Text { get; set; }
 
@@ -21,6 +22,7 @@ public class EndExamButton : MonoBehaviour, IPointerClickHandler
 		Text.text = "";
 
 		EndImage.SetActive(false);
+        WinField.SetActive(false);
 		RestartButton.SetActive(false);
 	}
 
@@ -35,7 +37,7 @@ public class EndExamButton : MonoBehaviour, IPointerClickHandler
 		}
         else
         {
-			Text.text = $"Ваша оценка: {mHandler.GetGameWins()}/5\nПоздравляем с успешной сдачей экзамена";
+            WinField.SetActive(true);
 		}
     }
 }

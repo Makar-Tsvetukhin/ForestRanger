@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FoodSortingManager : MonoBehaviour
 {
-    public TextMeshProUGUI progressText;
+    public Slider progressSlider; 
     public GameObject resultsPanel;
     public TextMeshProUGUI resultText;
     public Button finishButton;
@@ -13,7 +13,7 @@ public class FoodSortingManager : MonoBehaviour
     public MinigameState minigameState;
 
     [SerializeField]
-    private int _totalItems = 0; 
+    private int _totalItems = 8; 
 
     private int _movedItems;
     private int _correctlyMoved;
@@ -24,6 +24,10 @@ public class FoodSortingManager : MonoBehaviour
         finishButton.onClick.AddListener(CheckResults);
         restartButton.onClick.AddListener(RestartScene);
         resultsPanel.SetActive(false);
+
+        progressSlider.minValue = 0;
+        progressSlider.maxValue = _totalItems;
+        progressSlider.value = 0;
 
         UpdateProgress();
     }
@@ -37,7 +41,7 @@ public class FoodSortingManager : MonoBehaviour
 
     private void UpdateProgress()
     {
-        progressText.text = $"{_movedItems}/{_totalItems} перенесено";
+        progressSlider.value = _movedItems;
     }
 
     public void CheckResults()
