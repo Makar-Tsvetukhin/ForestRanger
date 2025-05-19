@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class MiniBlank : MonoBehaviour
 {
-	[field: SerializeField] private List<GameObject> gameObjects = new List<GameObject>();
+	[field: SerializeField] private List<GameObject> DogameObjects = new List<GameObject>();
+	[field: SerializeField] private List<GameObject> NotDogameObjects = new List<GameObject>();
 	private MinigameHandler mHandler { get; set; }
 
 	private void Start()
@@ -20,27 +21,36 @@ public class MiniBlank : MonoBehaviour
 
 	public void MissionDone(int index)
 	{
-		gameObjects[index].SetActive(true);
+		DogameObjects[index].SetActive(true);
 	}
 
 	public void CheckGameStatus()
 	{
-		if (gameObjects.Count == 0 || mHandler == null) return;
+		if (DogameObjects.Count == 0 || mHandler == null || DogameObjects[0] == null) return;
 
-		for (int i = 0; i < gameObjects.Count; i++)
+		for (int i = 0; i < DogameObjects.Count; i++)
 		{
-			if (mHandler.GetGameStatus(i) == 1) gameObjects[i].SetActive(true);
-			else gameObjects[i].SetActive(false);
+			if (mHandler.GetGameStatus(i) == 1) DogameObjects[i].SetActive(true);
+			else if (mHandler.GetGameStatus(i) == -1) NotDogameObjects[i].SetActive(true);
+			else
+			{
+				if (DogameObjects[i].activeSelf || NotDogameObjects[i].activeSelf)
+				{
+					DogameObjects[i].SetActive(false);
+					NotDogameObjects[i].SetActive(false);
+				}
+			}
 		}
 	}
 
 	public void RestartGame()
 	{
-		if (gameObjects.Count == 0 || mHandler == null) return;
+		if (DogameObjects.Count == 0 || mHandler == null) return;
 
-		for (int i = 0; i < gameObjects.Count; i++)
+		for (int i = 0; i < DogameObjects.Count; i++)
 		{
-			gameObjects[i].SetActive(false);
+			DogameObjects[i].SetActive(false);
+			NotDogameObjects[i].SetActive(false);
 		}
 	}
 }

@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NotDo: {fileID: -5796681024104259944, guid: 6f8e92aaea36c2747ba266fea41ce46e, type: 3}
   Do: {fileID: -8842615605006729978, guid: 0a315564f44040641aaa9b4db9e07f5e, type: 3}
+  Lose: {fileID: -5796681024104259944, guid: 05a30643f1b819e46a0c4e8c868ebb97, type: 3}
   GameIndex: 3
 --- !u!58 &6637269441860691852
 CircleCollider2D:
@@ -259,4 +260,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NotDo: {fileID: 5928890741358914781, guid: 256e3cadad47ba44b968ad48648f8755, type: 3}
   Do: {fileID: 0}
+  Lose: {fileID: 0}
   GameIndex: 3

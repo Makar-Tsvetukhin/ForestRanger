@@ -15,7 +15,6 @@ public class ShakeGame : MonoBehaviour
     public float totalTime = 10f; // Общее время для достижения финиша
     public GameObject resultPanel;
     public TextMeshProUGUI resultText;
-    public Button restartButton;
     public MinigameState minigameState;
 
     [Header("Movement Settings")]
@@ -32,7 +31,6 @@ public class ShakeGame : MonoBehaviour
     private void Start()
     {
         resultPanel.SetActive(false);
-        restartButton.onClick.AddListener(RestartGame);
 
         // Устанавливаем начальную позицию
         if (movingObject != null && startPoint != null)
@@ -109,7 +107,7 @@ public class ShakeGame : MonoBehaviour
 
         if (isWin)
         {
-            resultText.color = Color.green;
+            //resultText.color = Color.green;
             resultText.text = "Вы отпугнули медведя! Победа!";
             if (minigameState != null && !(minigameState.GetGameStatus() == 1))
             {
@@ -118,17 +116,12 @@ public class ShakeGame : MonoBehaviour
         }
         else
         {
-            resultText.color = Color.yellow;
+            //resultText.color = Color.yellow;
             resultText.text = "Вас съел медведь... Поражение!";
             if (minigameState != null && !(minigameState.GetGameStatus() == -1))
             {
                 minigameState.LoseGame();
             }
         }
-    }
-
-    private void RestartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
