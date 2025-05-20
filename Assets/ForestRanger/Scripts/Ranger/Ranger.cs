@@ -12,8 +12,17 @@ public class Ranger : MonoBehaviour
 	private bool IsMoving { get; set; } = false;
 	private bool IsEventClose { get; set; } = false;
 
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
-	/*private void OnCollisionEnter2D(Collision2D collision)
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    /*private void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.GetComponent<RangerOpenScene>() != null)
 		{
@@ -32,7 +41,7 @@ public class Ranger : MonoBehaviour
 		}
 	}*/
 
-	private void Update()
+    private void Update()
 	{
 		if (Input.GetMouseButtonDown(0))
 		{
@@ -48,7 +57,14 @@ public class Ranger : MonoBehaviour
 				if (TargetPosition != transform.position)
 				{
 					IsMoving = true;
-				}
+
+                    if (animator != null) animator.enabled = true;
+
+                    if (spriteRenderer != null)
+                    {
+                        spriteRenderer.flipX = TargetPosition.x < transform.position.x;
+                    }
+                }
 			}
 			else
 			{

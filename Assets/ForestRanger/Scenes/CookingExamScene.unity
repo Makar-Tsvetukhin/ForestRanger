@@ -886,8 +886,8 @@ GameObject:
   - component: {fileID: 312101288}
   - component: {fileID: 312101291}
   - component: {fileID: 312101290}
-  - component: {fileID: 312101292}
   - component: {fileID: 312101289}
+  - component: {fileID: 312101292}
   m_Layer: 5
   m_Name: PourButton
   m_TagString: Untagged
@@ -958,7 +958,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 312101290}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1749457480}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 35411b948f3677d44bcf7ae8ef469828, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &312101290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1368,9 +1380,9 @@ GameObject:
   - component: {fileID: 498353451}
   - component: {fileID: 498353454}
   - component: {fileID: 498353453}
+  - component: {fileID: 498353452}
   - component: {fileID: 498353455}
   - component: {fileID: 498353456}
-  - component: {fileID: 498353452}
   m_Layer: 5
   m_Name: CookButton
   m_TagString: Untagged
@@ -1441,7 +1453,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 498353453}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1749457480}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 35411b948f3677d44bcf7ae8ef469828, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1854765144}
+        m_TargetAssemblyTypeName: SoundPlayer, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &498353453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4516,6 +4552,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 71
       objectReference: {fileID: 0}
+    - target: {fileID: 7866259230621598561, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1854765143}
     - target: {fileID: 8924298357664111715, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
       propertyPath: m_Name
       value: ExamMinigameCanvas
@@ -5624,6 +5664,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &1749457480 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6555376630286972986, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
+  m_PrefabInstance: {fileID: 1371964109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1854765143 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1102784419181683880, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
+  m_PrefabInstance: {fileID: 1371964109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1854765144 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7866259230621598561, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
+  m_PrefabInstance: {fileID: 1371964109}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38de966e3b888e4b8f7c8adaec11b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1884247596
 GameObject:
   m_ObjectHideFlags: 0

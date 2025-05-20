@@ -12,16 +12,18 @@ public class ShakeGame : MonoBehaviour
     public Slider shakeSlider;
 
     [Header("Game Settings")]
-    public float totalTime = 10f; // Общее время для достижения финиша
+    public float totalTime = 10f;
     public GameObject resultPanel;
     public TextMeshProUGUI resultText;
     public MinigameState minigameState;
+    public AudioSource bearSound;
 
     [Header("Movement Settings")]
-    public Transform movingObject; // Объект (медведь), который будет двигаться
-    public Transform startPoint; // Стартовая точка
-    public Transform finishPoint; // Финишная точка
-    public float movementDuration = 10f; // Время за которое должен дойти до финиша
+    public Transform movingObject;
+    public Transform startPoint;
+    public Transform finishPoint;
+    public float movementDuration = 10f;
+    public Animator bearAnimator;
 
     private float currentProgress = 0f;
     private bool isGameOver = false;
@@ -32,10 +34,14 @@ public class ShakeGame : MonoBehaviour
     {
         resultPanel.SetActive(false);
 
-        // Устанавливаем начальную позицию
         if (movingObject != null && startPoint != null)
         {
             movingObject.position = startPoint.position;
+        }
+
+        if (bearSound != null)
+        {
+            bearSound.Play();
         }
 
 #if !UNITY_EDITOR
@@ -49,11 +55,9 @@ public class ShakeGame : MonoBehaviour
 
         if (!isBearStopped)
         {
-            // Обновляем таймер движения медведя
             bearMovementTimer += Time.deltaTime;
             currentProgress = bearMovementTimer / movementDuration;
 
-            // Двигаем медведя от старта к финишу
             if (movingObject != null && startPoint != null && finishPoint != null)
             {
                 movingObject.position = Vector3.Lerp(
@@ -62,24 +66,37 @@ public class ShakeGame : MonoBehaviour
                     currentProgress
                 );
 
-                // Проверяем, достиг ли медведь финиша
                 if (currentProgress >= 1f)
                 {
+                    if (bearSound != null)
+                    {
+                        bearSound.Stop();
+                    }
+                    if (bearAnimator != null)
+                    {
+                        bearAnimator.enabled = false;
+                    }
                     GameOver(false);
                     return;
                 }
             }
         }
 
-        // Проверка заполнения слайдера
         if (shakeSlider.value >= 1f && !isBearStopped)
         {
+            if (bearSound != null)
+            {
+                bearSound.Stop();
+            }
+            if (bearAnimator != null)
+            {
+                bearAnimator.enabled = false;
+            }
             isBearStopped = true;
             GameOver(true);
             return;
         }
 
-        // Постепенное уменьшение слайдера
         if (shakeSlider.value > 0f)
         {
             shakeSlider.value -= shakeDecreaseSpeed * Time.deltaTime;
@@ -90,7 +107,6 @@ public class ShakeGame : MonoBehaviour
     {
         if (isGameOver || isBearStopped) return;
 
-        // Проверка встряхивания устройства
         Vector3 acceleration = Input.acceleration;
         float shakeForce = acceleration.magnitude;
 
@@ -107,7 +123,6 @@ public class ShakeGame : MonoBehaviour
 
         if (isWin)
         {
-            //resultText.color = Color.green;
             resultText.text = "Вы отпугнули медведя! Победа!";
             if (minigameState != null && !(minigameState.GetGameStatus() == 1))
             {
@@ -116,7 +131,6 @@ public class ShakeGame : MonoBehaviour
         }
         else
         {
-            //resultText.color = Color.yellow;
             resultText.text = "Вас съел медведь... Поражение!";
             if (minigameState != null && !(minigameState.GetGameStatus() == -1))
             {
