@@ -19,7 +19,11 @@ public class CheckMinigameStatus : MonoBehaviour, IPointerClickHandler
 		MinigameEnd.SetActive(true);
 
 		if (minigameState.GetGameStatus() == 1) Text.text = "Задание выполено";
-		else if (minigameState.GetGameStatus() == -1) Text.text = "Задание не выполнено";
+		else if (minigameState.GetGameStatus() == -1)
+		{
+			Text.text = "Задание не выполнено";
+			minigameState.LoseGame();
+		}
 		else
 		{
 			Text.text = "Задание не выполнено";
