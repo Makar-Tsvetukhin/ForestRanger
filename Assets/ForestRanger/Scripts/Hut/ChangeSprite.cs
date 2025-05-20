@@ -3,30 +3,36 @@ using UnityEngine.UI;
 
 public class ChangeSprite : MonoBehaviour
 {
+	[field: SerializeField] private GameObject Indicator;
 	[field: SerializeField] private Sprite NotDo;
 	[field: SerializeField] private Sprite Do;
 	[field: SerializeField] private Sprite Lose;
 	[field: SerializeField] private int GameIndex;
-	private SpriteRenderer spriteRender;
+	[field: SerializeField] private SpriteRenderer spriteRender;
 	private MinigameHandler mHandler;
 
 	private void Start()
 	{
 		mHandler = GameObject.FindGameObjectWithTag("MinigameHandler").GetComponent<MinigameHandler>();
-		//mHandler.OnUpdate += CheckTask;
-
-		spriteRender = GetComponent<SpriteRenderer>();
-		spriteRender.sprite = NotDo;
+		mHandler.OnUpdate += CheckTask;
 
 		CheckTask();
 	}
 
 	private void CheckTask()
 	{
-		if (NotDo == null || Do == null) return;
+		if (NotDo == null || Do == null || Lose == null || mHandler == null || spriteRender == null) return;
 
-		if (mHandler.GetGameStatus(GameIndex) == 1) IsDoTask();
-		else if (mHandler.GetGameStatus(GameIndex) == -1) IsLoseTask();
+		if (mHandler.GetGameStatus(GameIndex) == 1)
+		{
+			IsDoTask();
+			Indicator.SetActive(false);
+		}
+		else if (mHandler.GetGameStatus(GameIndex) == -1)
+		{
+			IsLoseTask();
+			Indicator.SetActive(false);
+		}
 		else IsNotDoTask();
 	}
 
@@ -43,5 +49,6 @@ public class ChangeSprite : MonoBehaviour
 	public void IsLoseTask()
 	{
 		spriteRender.sprite = Lose;
+		Debug.Log("Z");
 	}
 }
