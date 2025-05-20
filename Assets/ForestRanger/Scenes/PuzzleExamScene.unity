@@ -1228,7 +1228,7 @@ PrefabInstance:
       objectReference: {fileID: 1577261478}
     - target: {fileID: 1041567620505174710, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
       propertyPath: GameIndex
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1142901993040284584, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
       propertyPath: m_AnchorMax.y

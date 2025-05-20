@@ -4342,7 +4342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1041567620505174710, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
       propertyPath: GameIndex
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2098431280242060345, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
       propertyPath: m_AnchoredPosition.y

@@ -363,6 +363,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68832437}
   m_CullTransparentMesh: 1
+--- !u!114 &75922683 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8744872200887054977, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
+  m_PrefabInstance: {fileID: 1970824481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970824485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &110611575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,17 +2180,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822318200}
   m_CullTransparentMesh: 1
---- !u!114 &840606741 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7644139728542513152, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
-  m_PrefabInstance: {fileID: 1970824481}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &840606742 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2312369310758274570, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
@@ -3796,7 +3796,7 @@ MonoBehaviour:
   progressSlider: {fileID: 840606744}
   resultsPanel: {fileID: 840606743}
   resultText: {fileID: 840606742}
-  finishButton: {fileID: 840606741}
+  finishButton: {fileID: 75922683}
   minigameState: {fileID: 1620269685}
   _totalItems: 8
 --- !u!4 &1620269684
@@ -4714,11 +4714,19 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1041567620505174710, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
+      propertyPath: GameIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2342428603965155868, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
       propertyPath: m_text
       value: "\u0420\u0430\u0437\u043B\u043E\u0436\u0438 \u0433\u0440\u0438\u0431\u044B
         \u0438 \u044F\u0433\u043E\u0434\u044B \u043F\u043E \u043D\u0443\u0436\u043D\u044B\u043C
         \u043A\u043E\u0440\u0437\u0438\u043D\u0430\u043C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3117119146570556068, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4319830328844247187, guid: 709e0923a68f1724dad12fe0381aa815, type: 3}
       propertyPath: m_AnchorMax.y

@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName: PuzzleExamScene
   GameIsEnd: {fileID: 0}
-  GameIndex: 3
+  GameIndex: 2
 --- !u!114 &-970120351865249870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   NotDo: {fileID: -5796681024104259944, guid: 6f8e92aaea36c2747ba266fea41ce46e, type: 3}
   Do: {fileID: -8842615605006729978, guid: 0a315564f44040641aaa9b4db9e07f5e, type: 3}
   Lose: {fileID: -5796681024104259944, guid: 05a30643f1b819e46a0c4e8c868ebb97, type: 3}
-  GameIndex: 3
+  GameIndex: 2
 --- !u!58 &6637269441860691852
 CircleCollider2D:
   m_ObjectHideFlags: 0

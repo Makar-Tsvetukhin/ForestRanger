@@ -30,8 +30,16 @@ public class MiniBlank : MonoBehaviour
 
 		for (int i = 0; i < DogameObjects.Count; i++)
 		{
-			if (mHandler.GetGameStatus(i) == 1) DogameObjects[i].SetActive(true);
-			else if (mHandler.GetGameStatus(i) == -1) NotDogameObjects[i].SetActive(true);
+			if (mHandler.GetGameStatus(i) == 1)
+			{
+				DogameObjects[i].SetActive(true);
+				NotDogameObjects[i].SetActive(false);
+			}
+			else if (mHandler.GetGameStatus(i) == -1)
+			{
+				NotDogameObjects[i].SetActive(true);
+				DogameObjects[i].SetActive(false);
+			}
 			else
 			{
 				if (DogameObjects[i].activeSelf || NotDogameObjects[i].activeSelf)
