@@ -118,10 +118,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1425c5aadd1f05846bd827ec169c8a31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Indicator: {fileID: 8718703338341014752}
   NotDo: {fileID: 6641822335702965045, guid: 7a7a6079bb61c194b8c036df5f020403, type: 3}
   Do: {fileID: 0}
   Lose: {fileID: 6641822335702965045, guid: 7a7a6079bb61c194b8c036df5f020403, type: 3}
   GameIndex: 0
+  spriteRender: {fileID: 9216342050755738735}
 --- !u!58 &6637269441860691852
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -168,7 +170,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2989818471537405867}
   - component: {fileID: 2481229921111454406}
-  - component: {fileID: 1337756775516608806}
   m_Layer: 0
   m_Name: Indicator
   m_TagString: Untagged
@@ -246,19 +247,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1337756775516608806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8718703338341014752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1425c5aadd1f05846bd827ec169c8a31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NotDo: {fileID: 5928890741358914781, guid: 256e3cadad47ba44b968ad48648f8755, type: 3}
-  Do: {fileID: 0}
-  Lose: {fileID: 0}
-  GameIndex: 0
