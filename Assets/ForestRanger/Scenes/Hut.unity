@@ -2281,10 +2281,6 @@ PrefabInstance:
       value: MinigameCooking
       objectReference: {fileID: 0}
     - target: {fileID: 1627434888557660488, guid: 1b0cd5a77a93fbf42a69538a417a2a55, type: 3}
-      propertyPath: GameIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1627434888557660488, guid: 1b0cd5a77a93fbf42a69538a417a2a55, type: 3}
       propertyPath: GameIsEnd
       value: 
       objectReference: {fileID: 1427956682}

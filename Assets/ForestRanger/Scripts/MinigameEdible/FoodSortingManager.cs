@@ -46,9 +46,12 @@ public class FoodSortingManager : MonoBehaviour
     {
         finishButton.gameObject.SetActive(false);
 		resultsPanel.SetActive(true);
-		resultText.text = $"Правильно перенесено: {_correctlyMoved}/{_totalItems}";
+		resultText.text = $"Правильно перенесено: {_correctlyMoved}/{_totalItems}\n";
+        if (_correctlyMoved < _totalItems) resultText.text += "Задание не выполнено";
+        else resultText.text += "Задание выполнено";
 
-        if (_correctlyMoved == _totalItems)
+
+		if (_correctlyMoved == _totalItems)
         {
             //resultText.color = Color.green;
             if (!(minigameState.GetGameStatus() == 1))
