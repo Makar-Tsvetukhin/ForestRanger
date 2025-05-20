@@ -9,7 +9,6 @@ public class FoodSortingManager : MonoBehaviour
     public GameObject resultsPanel;
     public TextMeshProUGUI resultText;
     public Button finishButton;
-    public Button restartButton;
     public MinigameState minigameState;
 
     [SerializeField]
@@ -22,7 +21,6 @@ public class FoodSortingManager : MonoBehaviour
     {
         minigameState = GetComponent<MinigameState>();
         finishButton.onClick.AddListener(CheckResults);
-        restartButton.onClick.AddListener(RestartScene);
         resultsPanel.SetActive(false);
 
         progressSlider.minValue = 0;
@@ -47,12 +45,15 @@ public class FoodSortingManager : MonoBehaviour
     public void CheckResults()
     {
         finishButton.gameObject.SetActive(false);
-        resultText.text = $"Правильно перенесено: {_correctlyMoved}/{_totalItems}";
-        resultsPanel.SetActive(true);
+		resultsPanel.SetActive(true);
+		resultText.text = $"Правильно перенесено: {_correctlyMoved}/{_totalItems}\n";
+        if (_correctlyMoved < _totalItems) resultText.text += "Задание не выполнено";
+        else resultText.text += "Задание выполнено";
 
-        if (_correctlyMoved == _totalItems)
+
+		if (_correctlyMoved == _totalItems)
         {
-            resultText.color = Color.green;
+            //resultText.color = Color.green;
             if (!(minigameState.GetGameStatus() == 1))
             {
                 minigameState.WinGame();
@@ -60,16 +61,11 @@ public class FoodSortingManager : MonoBehaviour
         }
         else
         {
-            resultText.color = Color.yellow;
+            //resultText.color = Color.yellow;
             if (!(minigameState.GetGameStatus() == -1))
             {
                 minigameState.LoseGame();
             }
         }
-    }
-
-    private void RestartScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -104,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName: CookingExamScene
   GameIsEnd: {fileID: 0}
-  GameIndex: 2
+  GameIndex: 3
 --- !u!58 &6637269441860691852
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -243,4 +243,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NotDo: {fileID: 5928890741358914781, guid: 256e3cadad47ba44b968ad48648f8755, type: 3}
   Do: {fileID: 0}
+  Lose: {fileID: 0}
   GameIndex: 2
