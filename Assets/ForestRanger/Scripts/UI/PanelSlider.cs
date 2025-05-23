@@ -5,6 +5,7 @@ public class PanelSlider : MonoBehaviour
 {
     public RectTransform panel;
     public RectTransform button;
+    public RectTransform targetPosition; 
     public float animationTime = 0.3f;
 
     private Vector2 startPanelPosition;
@@ -25,7 +26,7 @@ public class PanelSlider : MonoBehaviour
     IEnumerator Animate()
     {
         Vector2 startPos = panel.anchoredPosition;
-        Vector2 targetPos = isHidden ? startPanelPosition : startPanelPosition + Vector2.left * 250;
+        Vector2 targetPos = isHidden ? startPanelPosition : targetPosition.anchoredPosition;
         float startRot = button.localEulerAngles.z;
         float targetRot = isHidden ? 0 : 180;
         float elapsed = 0;
