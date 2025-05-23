@@ -42,7 +42,7 @@ public class PuzzleProgressUI : MonoBehaviour
 
         if (placedPieces >= totalPieces)
         {
-            Debug.Log("Готово");
+            
         }
     }
 
