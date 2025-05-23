@@ -21,7 +21,7 @@ public class ChangeSprite : MonoBehaviour
 
 	private void CheckTask()
 	{
-		if (NotDo == null || Do == null || Lose == null || mHandler == null || spriteRender == null) return;
+		if (mHandler == null || spriteRender == null) return;
 
 		if (mHandler.GetGameStatus(GameIndex) == 1)
 		{
@@ -49,6 +49,5 @@ public class ChangeSprite : MonoBehaviour
 	public void IsLoseTask()
 	{
 		spriteRender.sprite = Lose;
-		Debug.Log("Z");
 	}
 }
