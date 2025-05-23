@@ -19,7 +19,7 @@ public class Ingredient : MonoBehaviour, IPointerClickHandler
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		CreatedIngredient = Instantiate(/*gameObject*/ThisIngredient, transform.position/*UIPointToScene()*/, Quaternion.identity);
+		CreatedIngredient = Instantiate(/*gameObject*/ThisIngredient, /*transform.position*/UIPointToScene(), Quaternion.identity);
 		CreatedIngredient.GetComponent<SpriteRenderer>().sortingOrder = 5;
 		CreatedIngredient.GetComponent<Ingredient>().StartMove();
 	}
