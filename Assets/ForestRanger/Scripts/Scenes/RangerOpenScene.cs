@@ -37,7 +37,7 @@ public class RangerOpenScene : MonoBehaviour
 		if (mHandler.GetGameStatus(GameIndex) != 0)
 		{
 			GameIsEnd.SetActive(true);
-			GameIsEnd.GetComponentInChildren<TextMeshProUGUI>().text = "Ёта мини-игра закончена";
+			GameIsEnd.GetComponentInChildren<TextMeshProUGUI>().text = "«адание уже закончено";
 		}
 		else StartCoroutine(LoadScene(SceneName));
 	}

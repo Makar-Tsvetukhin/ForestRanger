@@ -54,6 +54,7 @@ public class Ranger : MonoBehaviour
 				NewOpenScene = hit.collider.gameObject.GetComponent<RangerOpenScene>();
 
 				TargetPosition = new Vector3(hit.point.x, hit.point.y, 0);
+
 				if (TargetPosition != transform.position)
 				{
 					IsMoving = true;
@@ -68,7 +69,8 @@ public class Ranger : MonoBehaviour
 			}
 			else
 			{
-				IsEventClose = false;
+				/*IsEventClose = false;
+				IsMoving = false;*/
 			}
 		}
 
