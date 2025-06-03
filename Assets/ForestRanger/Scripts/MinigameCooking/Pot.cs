@@ -6,17 +6,21 @@ using UnityEngine;
 
 public class Pot : MonoBehaviour
 {
+	[field: SerializeField] private GameObject EndImage;
 	[field: SerializeField] private List<Ingredient> NeededIngredients;
 
 	private List<Ingredient> Ingredients = new List<Ingredient>();
 	private MinigameState GameState { get; set; }
 	private Timer CookingTimer { get; set; } = new Timer(5);
+	private TextMeshProUGUI EndText { get; set; }
 	private int RightIngredients { get; set; }
 	private bool IsStartCooking { get; set; }
 
 	private void Start()
 	{
 		GameState = GetComponent<MinigameState>();
+
+		EndText = EndImage.GetComponentInChildren<TextMeshProUGUI>();
 
 		RightIngredients = 0;
 
@@ -88,14 +92,16 @@ public class Pot : MonoBehaviour
 
 	private void UnsuccessfulCooking()
 	{
-		Debug.Log("Готовка не удалась");
+		EndImage.SetActive(true);
+		EndText.text = "Готовка не удалась\nЗадание не выполнено";
 
 		PourIngredients();
 	}
 
 	private void SuccessfulCooking()
 	{
-		Debug.Log("Готовка удалась");
+		EndImage.SetActive(true);
+		EndText.text = "Готовка удалась\nЗадание выполнено";
 
 		PourIngredients();
 	}

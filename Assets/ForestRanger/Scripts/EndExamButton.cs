@@ -8,9 +8,12 @@ public class EndExamButton : MonoBehaviour, IPointerClickHandler
 {
 	[field: SerializeField] private GameObject EndImage;
 	[field: SerializeField] private GameObject RestartButton;
+	[field: SerializeField] private GameObject LoseField;
 	[field: SerializeField] private GameObject WinField;
 	private MinigameHandler mHandler;
-	private TextMeshProUGUI Text { get; set; }
+	private TextMeshProUGUI LoseText { get; set; }
+
+	private TextMeshProUGUI WinText { get; set; }
 
 
 
@@ -18,26 +21,31 @@ public class EndExamButton : MonoBehaviour, IPointerClickHandler
 	{
 		mHandler = GameObject.FindGameObjectWithTag("MinigameHandler").GetComponent<MinigameHandler>();
 
-		Text = EndImage.GetComponentInChildren<TextMeshProUGUI>();
-		Text.text = "";
+		LoseText = LoseField.GetComponentInChildren<TextMeshProUGUI>();
+		LoseText.text = "";
 
-		EndImage.SetActive(false);
-        WinField.SetActive(false);
-		RestartButton.SetActive(false);
+		WinText = WinField.GetComponentInChildren<TextMeshProUGUI>();
+		WinText.text = "";
+
+		LoseField.SetActive(false);
+		WinField.SetActive(false);
 	}
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		EndImage.SetActive(true);
 
 		if (mHandler.GetGameWins() < 3)
 		{
-			RestartButton.SetActive(true);
-			Text.text = $"Ваша оценка: {mHandler.GetGameWins()}/5\nК сожалению, вы не сдали экзамен";
+			LoseField.SetActive(true);
+			LoseText.text = $"Эх, дружок… Давай заново. И слушай, что говорю!";
 		}
         else
         {
             WinField.SetActive(true);
+
+			if (mHandler.GetGameWins() == 5) WinText.text = $"Ого! Да ты прирождённый егерь! Держи документы — избушка и ружьё твои.";
+			if (mHandler.GetGameWins() == 4) WinText.text = $"Неплохо! Пару ошибок — не смертельно, но в лесу будь внимательнее.";
+			if (mHandler.GetGameWins() == 3) WinText.text = $"Ладно… Проходи. Но учи матчасть, а то останешься без ужина.";
 		}
     }
 }

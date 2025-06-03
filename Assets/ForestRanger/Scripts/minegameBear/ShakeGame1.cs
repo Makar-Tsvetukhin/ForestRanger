@@ -53,7 +53,10 @@ public class ShakeGame : MonoBehaviour
     {
         if (isGameOver) return;
 
-        if (!isBearStopped)
+        if (minigameState.GetGameStatus() == 1) GameOver(true);
+		if (minigameState.GetGameStatus() == -1) GameOver(false);
+
+		if (!isBearStopped)
         {
             bearMovementTimer += Time.deltaTime;
             currentProgress = bearMovementTimer / movementDuration;
@@ -68,14 +71,14 @@ public class ShakeGame : MonoBehaviour
 
                 if (currentProgress >= 1f)
                 {
-                    if (bearSound != null)
+                   /*if (bearSound != null)
                     {
                         bearSound.Stop();
                     }
                     if (bearAnimator != null)
                     {
                         bearAnimator.enabled = false;
-                    }
+                    }*/
                     GameOver(false);
                     return;
                 }
@@ -137,5 +140,14 @@ public class ShakeGame : MonoBehaviour
                 minigameState.LoseGame();
             }
         }
-    }
+
+		if (bearSound != null)
+		{
+			bearSound.Stop();
+		}
+		if (bearAnimator != null)
+		{
+			bearAnimator.enabled = false;
+		}
+	}
 }

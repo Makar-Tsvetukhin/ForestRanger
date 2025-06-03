@@ -8,7 +8,7 @@ public class PuzzleProgressUI : MonoBehaviour
 
     private int totalPieces;
     private int placedPieces;
-
+        
     private void Start()
     {
         if (progressSlider == null)
