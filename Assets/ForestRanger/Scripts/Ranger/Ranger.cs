@@ -22,25 +22,6 @@ public class Ranger : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    /*private void OnCollisionEnter2D(Collision2D collision)
-	{
-		if (collision.gameObject.GetComponent<RangerOpenScene>() != null)
-		{
-			IsEventClose = true;
-			//collision.gameObject.GetComponent<RangerOpenScene>().LoadNewScene();
-			NewOpenScene = collision.gameObject.GetComponent<RangerOpenScene>();
-		}
-	}
-
-	private void OnCollisionExit2D(Collision2D collision)
-	{
-		if (collision.gameObject.GetComponent<RangerOpenScene>() != null)
-		{
-			IsEventClose = false;
-			NewOpenScene = null;
-		}
-	}*/
-
     private void Update()
 	{
 		if (Input.GetMouseButtonDown(0))
@@ -48,7 +29,7 @@ public class Ranger : MonoBehaviour
 			Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
-			if (/*hit.collider != null && */hit.collider.gameObject.GetComponent<RangerOpenScene>() != null)
+			if (hit.collider.gameObject.GetComponent<RangerOpenScene>() != null)
 			{
 				IsEventClose = true;
 				NewOpenScene = hit.collider.gameObject.GetComponent<RangerOpenScene>();
@@ -59,9 +40,12 @@ public class Ranger : MonoBehaviour
 				{
 					IsMoving = true;
 
-                    if (animator != null) animator.enabled = true;
+					if (animator != null)
+					{
+						animator.SetBool("IsWalk", true);
+					}
 
-                    if (spriteRenderer != null)
+					if (spriteRenderer != null)
                     {
                         spriteRenderer.flipX = TargetPosition.x < transform.position.x;
                     }
@@ -69,8 +53,10 @@ public class Ranger : MonoBehaviour
 			}
 			else
 			{
-				/*IsEventClose = false;
-				IsMoving = false;*/
+				IsEventClose = false;
+				IsMoving = false;
+
+				animator.SetBool("IsWalk", false);
 			}
 		}
 
