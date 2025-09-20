@@ -50,4 +50,9 @@ public class MinigameState : MonoBehaviour
 	{
 		return GameIndex;
 	}
+
+	public void RestartGame()
+	{
+		IsGameEnd = 0;
+	}
 }

@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +11,14 @@ public class ChangeSprite : MonoBehaviour
 	[field: SerializeField] private int GameIndex;
 	[field: SerializeField] private SpriteRenderer spriteRender;
 	private MinigameHandler mHandler;
+	private CircleCollider2D Collider;
 
 	private void Start()
 	{
 		mHandler = GameObject.FindGameObjectWithTag("MinigameHandler").GetComponent<MinigameHandler>();
 		mHandler.OnUpdate += CheckTask;
+
+		Collider = GetComponent<CircleCollider2D>();
 
 		CheckTask();
 	}
@@ -39,6 +43,7 @@ public class ChangeSprite : MonoBehaviour
 	public void IsDoTask()
 	{
 		spriteRender.sprite = Do;
+		if (Do == null) Collider.enabled = false;
 	}
 
 	public void IsNotDoTask()
