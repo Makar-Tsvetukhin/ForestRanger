@@ -34,7 +34,8 @@ public class Ranger : MonoBehaviour
 				IsEventClose = true;
 				NewOpenScene = hit.collider.gameObject.GetComponent<RangerOpenScene>();
 
-				TargetPosition = new Vector3(hit.point.x, hit.point.y, 0);
+				//TargetPosition = new Vector3(hit.point.x, hit.point.y, 0);
+				TargetPosition = hit.transform.position;
 
 				if (TargetPosition != transform.position)
 				{

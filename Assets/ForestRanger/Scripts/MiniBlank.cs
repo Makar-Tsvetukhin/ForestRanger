@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class MiniBlank : MonoBehaviour
 {
-	[field: SerializeField] private List<GameObject> DogameObjects = new List<GameObject>();
-	[field: SerializeField] private List<GameObject> NotDogameObjects = new List<GameObject>();
+	[field: SerializeField] private List<GameObject> DoGameObjects = new List<GameObject>();
+	[field: SerializeField] private List<GameObject> NotDoGameObjects = new List<GameObject>();
 	private MinigameHandler mHandler { get; set; }
 
 	private void Start()
@@ -21,44 +21,45 @@ public class MiniBlank : MonoBehaviour
 
 	public void MissionDone(int index)
 	{
-		DogameObjects[index].SetActive(true);
+		DoGameObjects[index].SetActive(true);
 	}
 
 	public void CheckGameStatus()
 	{
-		if (DogameObjects.Count == 0 || mHandler == null || DogameObjects[0] == null) return;
+		if (DoGameObjects.Count == 0 || mHandler == null || DoGameObjects[0] == null) return;
 
-		for (int i = 0; i < DogameObjects.Count; i++)
+		for (int i = 0; i < DoGameObjects.Count; i++)
 		{
 			if (mHandler.GetGameStatus(i) == 1)
 			{
-				DogameObjects[i].SetActive(true);
-				NotDogameObjects[i].SetActive(false);
+				DoGameObjects[i].SetActive(true);
+				NotDoGameObjects[i].SetActive(false);
 			}
 			else if (mHandler.GetGameStatus(i) == -1)
 			{
-				NotDogameObjects[i].SetActive(true);
-				DogameObjects[i].SetActive(false);
+				NotDoGameObjects[i].SetActive(true);
+				DoGameObjects[i].SetActive(false);
 			}
 			else
 			{
-				if (DogameObjects[i].activeSelf || NotDogameObjects[i].activeSelf)
+				if (DoGameObjects[i].activeSelf || NotDoGameObjects[i].activeSelf)
 				{
-					DogameObjects[i].SetActive(false);
-					NotDogameObjects[i].SetActive(false);
+					DoGameObjects[i].SetActive(false);
+					NotDoGameObjects[i].SetActive(false);
 				}
 			}
 		}
+
 	}
 
 	public void RestartGame()
 	{
-		if (DogameObjects.Count == 0 || mHandler == null) return;
+		if (DoGameObjects.Count == 0 || mHandler == null) return;
 
-		for (int i = 0; i < DogameObjects.Count; i++)
+		for (int i = 0; i < DoGameObjects.Count; i++)
 		{
-			DogameObjects[i].SetActive(false);
-			NotDogameObjects[i].SetActive(false);
+			DoGameObjects[i].SetActive(false);
+			NotDoGameObjects[i].SetActive(false);
 		}
 	}
 }

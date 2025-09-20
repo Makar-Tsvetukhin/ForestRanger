@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,7 @@ public class InputFieldScript : MonoBehaviour
 		GameState = GetComponent<MinigameState>();
 
 		inputField = GetComponent<TMP_InputField>();
+		inputField.text = "";
 		inputField.onEndEdit.AddListener(CheckAnswer);
 	}
 
@@ -24,11 +26,19 @@ public class InputFieldScript : MonoBehaviour
 		if (RightAnswer == answer)
 		{
 			Debug.Log("Ответ верный!");
+			inputField.interactable = false;
 			GameState.WinGame();
 		}
 		else
 		{
 			Debug.Log("Ответ неверный");
+			GameState.LoseGame();
 		}
+	}
+
+	public void RestartGame()
+	{
+		inputField.interactable = true;
+		inputField.text = "";
 	}
 }

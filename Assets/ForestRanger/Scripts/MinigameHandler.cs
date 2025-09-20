@@ -42,6 +42,7 @@ public class MinigameHandler : MonoBehaviour
 	{
 		Instance.MiniGamesEnd[gameindex] = 1;
 
+
 		OnUpdate?.Invoke();
 	}
 
