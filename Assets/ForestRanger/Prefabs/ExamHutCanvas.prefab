@@ -1835,7 +1835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7316125742278507526, guid: b05c32391ee471a4487b43dce640673b, type: 3}
       propertyPath: m_text
-      value: "\u0422\u0440\u044F\u0441\u043A\u0430"
+      value: "\u041E\u0442\u043F\u0443\u0433\u043D\u0438 \u043C\u0435\u0434\u0432\u0435\u0434\u044F"
       objectReference: {fileID: 0}
     - target: {fileID: 8875788019911927230, guid: b05c32391ee471a4487b43dce640673b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1983,7 +1983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7316125742278507526, guid: b05c32391ee471a4487b43dce640673b, type: 3}
       propertyPath: m_text
-      value: "\u041F\u0430\u0437\u043B"
+      value: "\u0421\u043E\u0431\u0435\u0440\u0438 \u0445\u0430\u043B\u0443\u043F\u0443"
       objectReference: {fileID: 0}
     - target: {fileID: 8875788019911927230, guid: b05c32391ee471a4487b43dce640673b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2131,7 +2131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7316125742278507526, guid: b05c32391ee471a4487b43dce640673b, type: 3}
       propertyPath: m_text
-      value: "\u0413\u043E\u0442\u043E\u0432\u043A\u0430"
+      value: "\u0413\u043E\u0442\u043E\u0432\u043A\u0430 \u0435\u0434\u044B"
       objectReference: {fileID: 0}
     - target: {fileID: 8875788019911927230, guid: b05c32391ee471a4487b43dce640673b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2279,7 +2279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7316125742278507526, guid: b05c32391ee471a4487b43dce640673b, type: 3}
       propertyPath: m_text
-      value: "\u041B\u0443\u043F\u0430"
+      value: "\u0421\u043A\u0440\u044B\u0442\u044B\u0439 \u0448\u0438\u0444\u0440"
       objectReference: {fileID: 0}
     - target: {fileID: 8875788019911927230, guid: b05c32391ee471a4487b43dce640673b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2427,7 +2427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7316125742278507526, guid: b05c32391ee471a4487b43dce640673b, type: 3}
       propertyPath: m_text
-      value: "\u0413\u0440\u0438\u0431\u044B-\u044F\u0433\u043E\u0434\u044B"
+      value: "\u0421\u044A\u0435\u0434\u043E\u0431\u043D\u043E\u0435/\u041D\u0435\u0441\u044A\u0435\u0434\u043E\u0431\u043D\u043E\u0435"
       objectReference: {fileID: 0}
     - target: {fileID: 8875788019911927230, guid: b05c32391ee471a4487b43dce640673b, type: 3}
       propertyPath: m_AnchorMax.y
