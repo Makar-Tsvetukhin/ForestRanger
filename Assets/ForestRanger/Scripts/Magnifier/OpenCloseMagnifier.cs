@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class OpenCloseMagnifier : MonoBehaviour, IPointerClickHandler
 {
 	[field: SerializeField] private GameObject Magnifier;
+	public bool IsMagnifierActive { get; private set; } = false;
 
 	private void Start()
 	{
@@ -15,5 +16,6 @@ public class OpenCloseMagnifier : MonoBehaviour, IPointerClickHandler
 	public void OnPointerClick(PointerEventData eventData)
 	{
 		Magnifier.SetActive(!Magnifier.activeSelf);
+		IsMagnifierActive = !IsMagnifierActive;
 	}
 }

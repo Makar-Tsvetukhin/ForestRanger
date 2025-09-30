@@ -5,14 +5,12 @@ using UnityEngine.UI;
 
 public class FoodSortingManager : MonoBehaviour
 {
-    public Slider progressSlider; 
-    public GameObject resultsPanel;
-    public TextMeshProUGUI resultText;
-    public Button finishButton;
-    public MinigameState minigameState;
-
-    [SerializeField]
-    private int _totalItems = 8; 
+	[field: SerializeField] private Slider progressSlider;
+	[field: SerializeField] private GameObject resultsPanel;
+	[field: SerializeField] private TextMeshProUGUI resultText;
+	[field: SerializeField] private Button finishButton;
+	[field: SerializeField] private MinigameState minigameState;
+	[field: SerializeField] private int _totalItems = 8; 
 
     private int _movedItems;
     private int _correctlyMoved;
@@ -53,7 +51,6 @@ public class FoodSortingManager : MonoBehaviour
 
 		if (_correctlyMoved == _totalItems)
         {
-            //resultText.color = Color.green;
             if (!(minigameState.GetGameStatus() == 1))
             {
                 minigameState.WinGame();
@@ -61,7 +58,6 @@ public class FoodSortingManager : MonoBehaviour
         }
         else
         {
-            //resultText.color = Color.yellow;
             if (!(minigameState.GetGameStatus() == -1))
             {
                 minigameState.LoseGame();

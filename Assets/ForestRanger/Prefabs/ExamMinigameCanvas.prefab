@@ -2244,7 +2244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e47b455b723a21419ffdf62bebbe660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Hut
+  SceneName: HutExamScene
 --- !u!114 &1795948347238862642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2820,7 +2820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e47b455b723a21419ffdf62bebbe660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Hut
+  SceneName: HutExamScene
 --- !u!1 &8854669473160727039
 GameObject:
   m_ObjectHideFlags: 0

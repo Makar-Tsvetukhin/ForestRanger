@@ -6,13 +6,12 @@ using UnityEngine.EventSystems;
 public class PuzzlePiece : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
 	[field: SerializeField] private string Name;
-	private Camera MainCamera { get; set; }
-	private GameObject Placement {  get; set; }
-	private Vector3 Offset { get; set; }
-	private Vector3 StartPosition { get; set; }
-	private bool InCollider { get; set; }
-	private bool InPlace { get; set; }
-
+	private Camera MainCamera;
+	private GameObject Placement;
+	private Vector3 Offset;
+	private Vector3 StartPosition;
+	private bool InCollider;
+	private bool InPlace;
 	private void Start()
 	{
 		MainCamera = Camera.main;

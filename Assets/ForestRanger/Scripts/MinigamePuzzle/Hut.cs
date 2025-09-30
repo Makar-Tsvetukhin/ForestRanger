@@ -4,8 +4,8 @@ using UnityEngine;
 public class Hut : MonoBehaviour
 {
     private List<Placement> Placements = new List<Placement>();
-	private MinigameState GameState { get; set; }
-	private int DoneCount { get; set; }
+    private MinigameState GameState;
+    private int DoneCount;
 
     public IReadOnlyList<Placement> GetPlacements() => Placements;
 

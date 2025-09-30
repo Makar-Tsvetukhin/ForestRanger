@@ -5,8 +5,8 @@ using UnityEngine;
 public class MinigameState : MonoBehaviour
 {
 	[field: SerializeField] private int GameIndex;
-	private MinigameHandler mHandler { get; set; }
-	private int IsGameEnd { get; set; }
+	private MinigameHandler mHandler;
+	private int IsGameEnd;
 
 	private void Start()
 	{

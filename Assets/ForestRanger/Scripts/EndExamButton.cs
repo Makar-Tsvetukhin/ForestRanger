@@ -11,9 +11,8 @@ public class EndExamButton : MonoBehaviour, IPointerClickHandler
 	[field: SerializeField] private GameObject LoseField;
 	[field: SerializeField] private GameObject WinField;
 	private MinigameHandler mHandler;
-	private TextMeshProUGUI LoseText { get; set; }
-
-	private TextMeshProUGUI WinText { get; set; }
+	private TextMeshProUGUI LoseText;
+	private TextMeshProUGUI WinText;
 
 
 

@@ -7,38 +7,67 @@ using UnityEngine.UI;
 
 public class InputFieldScript : MonoBehaviour
 {
+	[field: SerializeField] OpenCloseInputField CloseInputFeld;
+	[field: SerializeField] private GameObject EndPanel;
 	[field: SerializeField] private string RightAnswer;
-	private MinigameState GameState { get; set; }
-	private TMP_InputField inputField { get; set; }
-
+	[field: SerializeField] private MinigameState GameState;
+	[field: SerializeField] private TMP_InputField inputField;
+	private TextMeshProUGUI EndPanelText;
+	private bool IsLoad = false;
 
 	private void Start()
 	{
-		GameState = GetComponent<MinigameState>();
+		//GameState = GetComponent<MinigameState>();
 
-		inputField = GetComponent<TMP_InputField>();
+		EndPanelText = EndPanel.GetComponentInChildren<TextMeshProUGUI>();
+		EndPanel.SetActive(false);
+
+		//inputField = GetComponent<TMP_InputField>();
 		inputField.text = "";
 		inputField.onEndEdit.AddListener(CheckAnswer);
+
+		if (GameState.GetGameStatus() == 0)
+		{
+			inputField.interactable = true;
+			inputField.text = "";
+			IsLoad = false;
+		}
+
+		if (GameState.GetGameStatus() == 1)
+		{
+			inputField.text = "1264";
+			IsLoad = true;
+			CheckAnswer("1264");
+		}
 	}
 
 	private void CheckAnswer(string answer)
 	{
 		if (RightAnswer == answer)
 		{
+			if (!IsLoad)
+			{
+				EndPanel.SetActive(true);
+				EndPanelText.text = "Сейф открыт";
+			}
 			Debug.Log("Ответ верный!");
 			inputField.interactable = false;
 			GameState.WinGame();
 		}
 		else
 		{
+			EndPanel.SetActive(true);
+			EndPanelText.text = "Неправильный пароль";
 			Debug.Log("Ответ неверный");
 			GameState.LoseGame();
 		}
+		CloseInputFeld.OpenCloseField();
 	}
 
 	public void RestartGame()
 	{
 		inputField.interactable = true;
 		inputField.text = "";
+		IsLoad = false;
 	}
 }

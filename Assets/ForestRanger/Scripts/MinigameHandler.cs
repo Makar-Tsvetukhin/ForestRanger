@@ -7,15 +7,11 @@ using UnityEngine.SceneManagement;
 public class MinigameHandler : MonoBehaviour
 {
 	[field: SerializeField] private string MainGameElementTag;
-
 	private static MinigameHandler Instance;
-
 	private List<int> MiniGamesEnd = new List<int>();
-	private MinigameState GameState { get; set; }
-	private int GameWins { get; set; }
+	private MinigameState GameState;
 
 	public event Action OnUpdate;
-
 
 
 	private void Awake()
@@ -25,7 +21,6 @@ public class MinigameHandler : MonoBehaviour
 		{
 			Instance = this;
 			DontDestroyOnLoad(gameObject);
-			Instance.GameWins = 0;
 
 			SceneManager.sceneLoaded += NewSceneLoad;
 
@@ -41,7 +36,6 @@ public class MinigameHandler : MonoBehaviour
 	public void WinGame(int gameindex)
 	{
 		Instance.MiniGamesEnd[gameindex] = 1;
-
 
 		OnUpdate?.Invoke();
 	}

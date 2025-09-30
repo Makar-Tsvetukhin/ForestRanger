@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 public class RandomPrefabSpawner : MonoBehaviour
 {
-    public List<GameObject> foodPrefabs;
-    public List<GameObject> trashPrefabs;
-    public int totalItemsToSpawn = 10;
-    public float maxXOffset = 0.3f;
-    public float maxYOffset = 0.2f;
+	[field: SerializeField] private List<GameObject> foodPrefabs;
+	[field: SerializeField] private List<GameObject> trashPrefabs;
+	[field: SerializeField] private int totalItemsToSpawn = 10;
+	[field: SerializeField] private float maxXOffset = 0.3f;
+	[field: SerializeField] private float maxYOffset = 0.2f;
 
     public delegate void SpawnFinishedEvent(int spawnedCount);
     public event SpawnFinishedEvent OnSpawnFinished;

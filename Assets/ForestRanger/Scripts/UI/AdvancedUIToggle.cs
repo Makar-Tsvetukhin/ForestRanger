@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 public class AdvancedUIToggle2D : MonoBehaviour
 {
-    public List<GameObject> uiElementsToDeactivate = new List<GameObject>();
-    public List<GameObject> elementsToActivate = new List<GameObject>();
-    public GameObject parentWithColliders;
+	[field: SerializeField] private List<GameObject> uiElementsToDeactivate = new List<GameObject>();
+	[field: SerializeField] private List<GameObject> elementsToActivate = new List<GameObject>();
+	[field: SerializeField] private GameObject parentWithColliders;
 
     private List<bool> originalUIStates = new List<bool>();
     private List<Collider2D> childColliders = new List<Collider2D>();

@@ -10,21 +10,17 @@ public class Pot : MonoBehaviour
 	[field: SerializeField] private List<Ingredient> NeededIngredients;
 
 	private List<Ingredient> Ingredients = new List<Ingredient>();
-	private MinigameState GameState { get; set; }
-	private Timer CookingTimer { get; set; } = new Timer(5);
-	private TextMeshProUGUI EndText { get; set; }
-	private int RightIngredients { get; set; }
-	private bool IsStartCooking { get; set; }
+	private MinigameState GameState;
+	private Timer CookingTimer = new Timer(3);
+	private TextMeshProUGUI EndText;
+	private int RightIngredients = 0;
+	private bool IsStartCooking = false;
 
 	private void Start()
 	{
 		GameState = GetComponent<MinigameState>();
 
 		EndText = EndImage.GetComponentInChildren<TextMeshProUGUI>();
-
-		RightIngredients = 0;
-
-		IsStartCooking = false;
 
 		CookingTimer.OnTimerEnd += CookingResult;
 	}
