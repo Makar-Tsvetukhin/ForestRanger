@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 
 public class DragCamera : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-	[field: SerializeField] private Camera ThisCamera { get; set; }
-	private Camera MainCamera { get; set; }
-	private Vector3 StoneOffset { get; set; }
+	[field: SerializeField] private Camera ThisCamera;
+	private Camera MainCamera;
+	private Vector3 StoneOffset;
 
 	private void Start()
 	{

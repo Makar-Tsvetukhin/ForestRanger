@@ -1234,7 +1234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e47b455b723a21419ffdf62bebbe660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Hut
+  SceneName: HutExamScene
 --- !u!1 &4902683831145301277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,7 +2159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e17af11a72f73c4d8ca9a486b31f465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ThisCamera>k__BackingField: {fileID: 0}
+  ThisCamera: {fileID: 0}
 --- !u!114 &4450285139976493302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2835,7 +2835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4518580053698657789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2906,7 +2906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e17af11a72f73c4d8ca9a486b31f465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ThisCamera>k__BackingField: {fileID: 0}
+  ThisCamera: {fileID: 0}
 --- !u!1 &7021301876629119889
 GameObject:
   m_ObjectHideFlags: 0

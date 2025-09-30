@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public class SliderFiller : MonoBehaviour
 {
-    public Slider slider;
-    public Button button;
-    private float fillDuration = 5f;
-    private float resetDelay = 0.5f;
+	[field: SerializeField] private Slider slider;
+    [field: SerializeField] private Button button;
+	[field: SerializeField] private float fillDuration = 3f;
+	[field: SerializeField] private float resetDelay = 0.5f;
     private bool isFilling = false;
     private bool isResetting = false;
     private float currentTime = 0f;

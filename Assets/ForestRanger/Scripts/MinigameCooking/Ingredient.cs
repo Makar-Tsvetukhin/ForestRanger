@@ -8,9 +8,9 @@ public class Ingredient : MonoBehaviour, IPointerClickHandler
 	[field: SerializeField] private string Name;
 	[field: SerializeField] private GameObject DestinationPoint;
 	[field: SerializeField] private GameObject ThisIngredient;
-	private GameObject CreatedIngredient {  get; set; }
-	private string StartName { get; set; }
-	private bool IsMoving { get; set; } = false;
+	private GameObject CreatedIngredient;
+	private string StartName;
+	private bool IsMoving = false;
 
 	private void Start()
 	{
@@ -19,7 +19,7 @@ public class Ingredient : MonoBehaviour, IPointerClickHandler
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		CreatedIngredient = Instantiate(/*gameObject*/ThisIngredient, transform.position/*UIPointToScene()*/, Quaternion.identity);
+		CreatedIngredient = Instantiate(ThisIngredient, transform.position, Quaternion.identity);
 		CreatedIngredient.GetComponent<SpriteRenderer>().sortingOrder = 5;
 		CreatedIngredient.GetComponent<Ingredient>().StartMove();
 	}

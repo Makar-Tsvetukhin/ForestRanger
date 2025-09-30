@@ -6,24 +6,24 @@ using TMPro;
 public class ShakeGame : MonoBehaviour
 {
     [Header("Shake Settings")]
-    public float shakeThreshold = 2.5f;
-    public float shakeFillSpeed = 0.2f;
-    public float shakeDecreaseSpeed = 0.1f;
-    public Slider shakeSlider;
+	[field: SerializeField] private float shakeThreshold = 2.5f;
+	[field: SerializeField] private float shakeFillSpeed = 0.2f;
+	[field: SerializeField] private float shakeDecreaseSpeed = 0.1f;
+	[field: SerializeField] private Slider shakeSlider;
 
     [Header("Game Settings")]
-    public float totalTime = 10f;
-    public GameObject resultPanel;
-    public TextMeshProUGUI resultText;
-    public MinigameState minigameState;
-    public AudioSource bearSound;
+	[field: SerializeField] private float totalTime = 10f;
+	[field: SerializeField] private GameObject resultPanel;
+	[field: SerializeField] private TextMeshProUGUI resultText;
+	[field: SerializeField] private MinigameState minigameState;
+	[field: SerializeField] private AudioSource bearSound;
 
     [Header("Movement Settings")]
-    public Transform movingObject;
-    public Transform startPoint;
-    public Transform finishPoint;
-    public float movementDuration = 10f;
-    public Animator bearAnimator;
+	[field: SerializeField] private Transform movingObject;
+	[field: SerializeField] private Transform startPoint;
+	[field: SerializeField] private Transform finishPoint;
+	[field: SerializeField] private float movementDuration = 10f;
+	[field: SerializeField] private Animator bearAnimator;
 
     private float currentProgress = 0f;
     private bool isGameOver = false;
@@ -71,14 +71,6 @@ public class ShakeGame : MonoBehaviour
 
                 if (currentProgress >= 1f)
                 {
-                   /*if (bearSound != null)
-                    {
-                        bearSound.Stop();
-                    }
-                    if (bearAnimator != null)
-                    {
-                        bearAnimator.enabled = false;
-                    }*/
                     GameOver(false);
                     return;
                 }

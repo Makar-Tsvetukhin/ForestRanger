@@ -2365,6 +2365,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4738852841839918839, guid: 98ea13ab915535b4aba1fa69a69e8126, type: 3}
+      propertyPath: ThisCamera
+      value: 
+      objectReference: {fileID: 747529420}
+    - target: {fileID: 4738852841839918839, guid: 98ea13ab915535b4aba1fa69a69e8126, type: 3}
       propertyPath: <ThisCamera>k__BackingField
       value: 
       objectReference: {fileID: 747529420}
@@ -2440,6 +2444,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6048175602150323957, guid: 98ea13ab915535b4aba1fa69a69e8126, type: 3}
+      propertyPath: ThisCamera
+      value: 
+      objectReference: {fileID: 747529420}
     - target: {fileID: 6048175602150323957, guid: 98ea13ab915535b4aba1fa69a69e8126, type: 3}
       propertyPath: <ThisCamera>k__BackingField
       value: 
@@ -2890,8 +2898,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 664624017}
-  - {fileID: 1414396521}
   - {fileID: 438578999}
   - {fileID: 519420032}
   - {fileID: 600657745}
   - {fileID: 747529421}
+  - {fileID: 1414396521}

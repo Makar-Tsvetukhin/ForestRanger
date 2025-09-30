@@ -7,7 +7,7 @@ public class MiniBlank : MonoBehaviour
 {
 	[field: SerializeField] private List<GameObject> DoGameObjects = new List<GameObject>();
 	[field: SerializeField] private List<GameObject> NotDoGameObjects = new List<GameObject>();
-	private MinigameHandler mHandler { get; set; }
+	private MinigameHandler mHandler;
 
 	private void Start()
 	{

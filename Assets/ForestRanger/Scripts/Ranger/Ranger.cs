@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Drawing;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class Ranger : MonoBehaviour
 {
-	private RangerOpenScene NewOpenScene { get; set; }
-	private Vector3 TargetPosition { get; set; }
-	private bool IsMoving { get; set; } = false;
-	private bool IsEventClose { get; set; } = false;
-
+	[field: SerializeField] private OpenCloseMagnifier Magnifier;
+	private RangerOpenScene NewOpenScene;
+	private Vector3 TargetPosition;
+	private bool IsMoving = false;
+	private bool IsEventClose = false;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
@@ -29,12 +30,14 @@ public class Ranger : MonoBehaviour
 			Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
+			Debug.Log(hit.collider.gameObject);
+
 			if (hit.collider.gameObject.GetComponent<RangerOpenScene>() != null)
 			{
+			
 				IsEventClose = true;
 				NewOpenScene = hit.collider.gameObject.GetComponent<RangerOpenScene>();
 
-				//TargetPosition = new Vector3(hit.point.x, hit.point.y, 0);
 				TargetPosition = hit.transform.position;
 
 				if (TargetPosition != transform.position)

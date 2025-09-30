@@ -4,7 +4,8 @@ using System;
 public class Placement : MonoBehaviour
 {
     [field: SerializeField] private string Name;
-    private bool IsDone { get; set; }
+    private bool IsDone;
+
     public event Action OnPiecePlaced;
 
     private void Start()

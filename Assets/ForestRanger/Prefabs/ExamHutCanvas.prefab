@@ -650,7 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e47b455b723a21419ffdf62bebbe660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: ExamBlank
+  SceneName: ExamBlankScene
 --- !u!114 &6108064810968633593
 MonoBehaviour:
   m_ObjectHideFlags: 0
