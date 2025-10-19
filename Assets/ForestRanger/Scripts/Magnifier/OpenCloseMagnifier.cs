@@ -10,11 +10,13 @@ public class OpenCloseMagnifier : MonoBehaviour, IPointerClickHandler
 
 	private void Start()
 	{
+		if (Magnifier != null) 
 		Magnifier.SetActive(false);
 	}
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
+		if (Magnifier == null) return;
 		Magnifier.SetActive(!Magnifier.activeSelf);
 		IsMagnifierActive = !IsMagnifierActive;
 	}

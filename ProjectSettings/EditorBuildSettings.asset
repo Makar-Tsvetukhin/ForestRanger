@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ForestRanger/Scenes/SortingExamScene.unity
     guid: de4f3201a661bce4f99fa3cc2a0ecfe0
+  - enabled: 1
+    path: Assets/ForestRanger/Scenes/VillageScene.unity
+    guid: 1ca57c66ed75a3842adead3bce4af04a
+  - enabled: 1
+    path: Assets/ForestRanger/Scenes/VasesGameScene.unity
+    guid: 41e7cc3da0350a8429ae91e30d4f5960
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 9abe5121ac865f44c8adbd735c23f40e, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 49a6360f813af71478ef0fd1ffd16848, type: 2}

@@ -8,12 +8,14 @@ public class OpenCloseInputField : MonoBehaviour, IPointerClickHandler
 
 	private void Start()
 	{
+		if (InputField != null)
 		InputField.SetActive(false);
 	}
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		OpenCloseField();
+		if (InputField != null)
+			OpenCloseField();
 	}
 
 	public void OpenCloseField()

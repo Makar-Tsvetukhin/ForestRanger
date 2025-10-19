@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -10,6 +11,9 @@ public class Ranger : MonoBehaviour
 {
 	[field: SerializeField] private OpenCloseMagnifier Magnifier;
 	private RangerOpenScene NewOpenScene;
+	private RaycastHit2D hit;
+	private RaycastHit2D Hit;
+	private RaycastHit2D MissHit;
 	private Vector3 TargetPosition;
 	private bool IsMoving = false;
 	private bool IsEventClose = false;
@@ -27,16 +31,27 @@ public class Ranger : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(0))
 		{
-			Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+			Hit = new RaycastHit2D();
 
+			Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			RaycastHit2D[] hits = Physics2D.RaycastAll(mousePos, Vector2.zero);
+
+			foreach (RaycastHit2D everyhit in hits)
+			{
+				if (everyhit.collider.gameObject.GetComponent<RangerOpenScene>() != null) Hit = everyhit;
+				else MissHit = everyhit;
+			}
+
+			if (Hit.collider == null) hit = MissHit;
+			else hit = Hit;
+			
 			Debug.Log(hit.collider.gameObject);
 
-			if (hit.collider.gameObject.GetComponent<RangerOpenScene>() != null)
+			if (hit.collider.gameObject.GetComponent<RangerOpenScene>() != null && hit.collider.gameObject.GetComponent<RangerOpenScene>().GetSceneName() != "HutExamScene" && !Magnifier.IsMagnifierActive)
 			{
 			
 				IsEventClose = true;
-				NewOpenScene = hit.collider.gameObject.GetComponent<RangerOpenScene>();
+				if (hit.collider.gameObject.GetComponent<RangerOpenScene>() != null) NewOpenScene = hit.collider.gameObject.GetComponent<RangerOpenScene>();
 
 				TargetPosition = hit.transform.position;
 
