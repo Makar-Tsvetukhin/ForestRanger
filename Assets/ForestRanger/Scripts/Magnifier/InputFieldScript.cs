@@ -50,7 +50,6 @@ public class InputFieldScript : MonoBehaviour
 				EndPanel.SetActive(true);
 				EndPanelText.text = "Сейф открыт";
 			}
-			Debug.Log("Ответ верный!");
 			inputField.interactable = false;
 			GameState.WinGame();
 		}
@@ -58,7 +57,7 @@ public class InputFieldScript : MonoBehaviour
 		{
 			EndPanel.SetActive(true);
 			EndPanelText.text = "Неправильный пароль";
-			Debug.Log("Ответ неверный");
+			inputField.text = "";
 			GameState.LoseGame();
 		}
 		CloseInputFeld.OpenCloseField();

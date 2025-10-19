@@ -34,11 +34,16 @@ public class RangerOpenScene : MonoBehaviour
 
 	private void CheckLoadScene()
 	{
-		if (mHandler.GetGameStatus(GameIndex) != 0)
+		if (mHandler.GetGameStatus(GameIndex) != 0 && GameIsEnd != null)
 		{
 			GameIsEnd.SetActive(true);
 			GameIsEnd.GetComponentInChildren<TextMeshProUGUI>().text = "Задание уже закончено";
 		}
 		else StartCoroutine(LoadScene(SceneName));
+	}
+
+	public string GetSceneName()
+	{
+		return SceneName;
 	}
 }

@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e47b455b723a21419ffdf62bebbe660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Map
+  SceneName: VillageScene
 --- !u!1 &2487444464647869319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2845119941285402253}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.5906672
+  m_Size: 0.5300752
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1758,7 +1758,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EndImage: {fileID: 5063947643068567093}
   Blank: {fileID: 6590474012515657066}
-  TextInputField: {fileID: 6210662812049114}
   MagnifierTask: {fileID: 7482262028437741130}
 --- !u!1 &5445646944404890259
 GameObject:
@@ -3841,7 +3840,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EndImage: {fileID: 7285281107966277420}
   Blank: {fileID: 6590474012515657066}
-  TextInputField: {fileID: 6210662812049114}
   MagnifierTask: {fileID: 7482262028437741130}
 --- !u!1001 &2143617610518740880
 PrefabInstance:
@@ -4460,17 +4458,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e144e6c421d10f49ae641d2ef4c8454, type: 3}
---- !u!114 &6210662812049114 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5897842728466248298, guid: 7e144e6c421d10f49ae641d2ef4c8454, type: 3}
-  m_PrefabInstance: {fileID: 5895009766335491248}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78152002c0743a245ae388a7ea98096d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1561736097198509149 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4927833624147828973, guid: 7e144e6c421d10f49ae641d2ef4c8454, type: 3}

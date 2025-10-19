@@ -475,7 +475,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.62, y: 1.13}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &461317186
 MonoBehaviour:
@@ -651,7 +651,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 9.13, y: 5.64}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &516212128
 MonoBehaviour:
@@ -956,7 +956,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 7.58, y: 6.66}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &827087714
 MonoBehaviour:
@@ -1515,7 +1515,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 6, y: 3.5}
+  m_Size: {x: 9.13, y: 5.64}
   m_EdgeRadius: 0
 --- !u!212 &1268243121
 SpriteRenderer:
@@ -1761,7 +1761,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.63, y: 3.55}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &1322250224
 MonoBehaviour:
@@ -2282,7 +2282,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 3.63, y: 3.55}
   m_EdgeRadius: 0
 --- !u!212 &1724631124
 SpriteRenderer:
@@ -2473,7 +2473,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 5, y: 4}
+  m_Size: {x: 7.53, y: 6.71}
   m_EdgeRadius: 0
 --- !u!114 &1766673120
 MonoBehaviour:

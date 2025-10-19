@@ -19,6 +19,7 @@ public class ChangeSprite : MonoBehaviour
 		mHandler.OnUpdate += CheckTask;
 
 		Collider = GetComponent<CircleCollider2D>();
+		Collider.enabled = true;
 
 		CheckTask();
 	}
@@ -35,7 +36,7 @@ public class ChangeSprite : MonoBehaviour
 		else if (mHandler.GetGameStatus(GameIndex) == -1)
 		{
 			IsLoseTask();
-			Indicator.SetActive(false);
+			if (GameIndex != 4) Indicator.SetActive(false);
 		}
 		else IsNotDoTask();
 	}
