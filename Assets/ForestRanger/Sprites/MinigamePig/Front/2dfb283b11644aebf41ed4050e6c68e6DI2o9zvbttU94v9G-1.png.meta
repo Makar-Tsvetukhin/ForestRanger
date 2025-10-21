@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 49ed064631e03c5409728d08a3f9268e
+guid: 91965f7231ea9ea4c9d2fd18275c13a8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8202578757936069853
-    second: "\u043C\u043E\u0441\u043A\u0432\u0438\u0447\u043A\u0430 \u043A\u043E\u043D\u0444\u0435\u0442\u044B_0"
+      213: 3856514144938012161
+    second: 2dfb283b11644aebf41ed4050e6c68e6DI2o9zvbttU94v9G-1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,30 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u043C\u043E\u0441\u043A\u0432\u0438\u0447\u043A\u0430 \u043A\u043E\u043D\u0444\u0435\u0442\u044B_0"
+      name: 2dfb283b11644aebf41ed4050e6c68e6DI2o9zvbttU94v9G-1_0
       rect:
         serializedVersion: 2
-        x: 640
-        y: 1072
-        width: 178
-        height: 53
+        x: 169
+        y: 193
+        width: 766
+        height: 712
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3234e0b24169a2e80800000000000000
-      internalID: -8202578757936069853
+      spriteID: 10eac40ae27158530800000000000000
+      internalID: 3856514144938012161
       vertices: []
       indices: 
       edges: []
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u043C\u043E\u0441\u043A\u0432\u0438\u0447\u043A\u0430 \u043A\u043E\u043D\u0444\u0435\u0442\u044B_0": -8202578757936069853
+      2dfb283b11644aebf41ed4050e6c68e6DI2o9zvbttU94v9G-1_0: 3856514144938012161
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
