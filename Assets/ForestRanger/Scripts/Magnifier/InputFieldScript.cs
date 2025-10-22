@@ -17,12 +17,10 @@ public class InputFieldScript : MonoBehaviour
 
 	private void Start()
 	{
-		//GameState = GetComponent<MinigameState>();
 
 		EndPanelText = EndPanel.GetComponentInChildren<TextMeshProUGUI>();
 		EndPanel.SetActive(false);
 
-		//inputField = GetComponent<TMP_InputField>();
 		inputField.text = "";
 		inputField.onEndEdit.AddListener(CheckAnswer);
 

@@ -12,7 +12,9 @@ public class OpenScene : MonoBehaviour, IPointerClickHandler
 
 	public virtual void OnPointerClick(PointerEventData eventData)
 	{
+		Debug.Log("H");
 		CheckLoadScene();
+		Debug.Log("Z");
 	}
 
 	protected virtual void CheckLoadScene()

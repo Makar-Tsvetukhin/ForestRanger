@@ -44,8 +44,6 @@ public class Ranger : MonoBehaviour
 
 			if (Hit.collider == null) hit = MissHit;
 			else hit = Hit;
-			
-			Debug.Log(hit.collider.gameObject);
 
 			if (hit.collider.gameObject.GetComponent<RangerOpenScene>() != null && hit.collider.gameObject.GetComponent<RangerOpenScene>().GetSceneName() != "HutExamScene" && !Magnifier.IsMagnifierActive)
 			{

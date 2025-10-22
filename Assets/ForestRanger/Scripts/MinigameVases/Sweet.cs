@@ -26,7 +26,6 @@ public class Sweet : MonoBehaviour
 		if (collision.gameObject.GetComponentInParent<Vase>() != null && collision.gameObject.GetComponent<Vase>() == null)
 		{
 			SweetPlace = collision.gameObject.GetComponentInParent<Vase>().GetSweetPlace();
-			//transform.SetParent(SweetPlace.transform, false);
 			transform.position = SweetPlace.transform.position;
 			Rigidbody.simulated = false;
 
@@ -37,7 +36,6 @@ public class Sweet : MonoBehaviour
 	public void EndMixing()
 	{
 		transform.position = SweetPlace.transform.position;
-		//transform.SetParent(null, true);
 	}
 
 	public void Guess()
@@ -65,7 +63,7 @@ public class Sweet : MonoBehaviour
 	{
 		if (IsUp)
 		{
-			transform.position = Vector3.MoveTowards(transform.position, new Vector3(SweetPlace.transform.position.x, StartPosition.y, SweetPlace.transform.position.z), 0.01f);
+			transform.position = Vector3.MoveTowards(transform.position, new Vector3(SweetPlace.transform.position.x, StartPosition.y, SweetPlace.transform.position.z), 0.1f);
 			if (transform.position == new Vector3(SweetPlace.transform.position.x, SweetPlace.transform.position.y + 2, SweetPlace.transform.position.z)) IsUp = false;
 		}
 	}

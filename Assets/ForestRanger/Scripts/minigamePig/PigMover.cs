@@ -13,7 +13,7 @@ public class PigMover : MonoBehaviour
     private bool isMoving;
     private Vector2 swipeStart;
 
-    private Vector2 targetNodePosition;
+	private Vector2 targetNodePosition;
     private bool centering;
 
     public bool IsMoving
@@ -24,13 +24,14 @@ public class PigMover : MonoBehaviour
 
     void Awake()
     {
+
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (Input.touchCount > 0 && !centering)
+        if (Input.touchCount > 0 && !centering && !IsMoving)
         {
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Began)
@@ -40,7 +41,7 @@ public class PigMover : MonoBehaviour
             else if (touch.phase == TouchPhase.Ended)
             {
                 Vector2 swipe = touch.position - swipeStart;
-                if (swipe.magnitude > 50f)
+                if (swipe.magnitude > 100f)
                 {
                     if (Mathf.Abs(swipe.x) > Mathf.Abs(swipe.y))
                         moveDirection = swipe.x > 0 ? Vector2.right : Vector2.left;
@@ -56,9 +57,9 @@ public class PigMover : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Node"))
+        if (collision.CompareTag("Node") || collision.CompareTag("Background"))
         {
-            targetNodePosition = collision.transform.position;
+            if (collision.CompareTag("Node")) targetNodePosition = collision.transform.position;
             centering = true;
             isMoving = false;
             moveDirection = Vector2.zero;
