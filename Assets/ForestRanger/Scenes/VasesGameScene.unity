@@ -885,6 +885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 773205082}
   - component: {fileID: 773205081}
+  - component: {fileID: 773205083}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -968,6 +969,18 @@ Transform:
   - {fileID: 690882619}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &773205083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773205080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1138e9c61e3c8e84e86429bc999952d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &907499855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,6 +1916,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e1afa68c415b845b66869f70e09a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SweetSprites:
+  - {fileID: 7200413635291537125, guid: feb832d08e8d90f468a72be90a2f0b2d, type: 3}
+  - {fileID: -8202578757936069853, guid: 49ed064631e03c5409728d08a3f9268e, type: 3}
+  - {fileID: -2262094866548222043, guid: 69144a3e98b2f7346a2c38998b5221b1, type: 3}
 --- !u!4 &1890645405
 Transform:
   m_ObjectHideFlags: 0

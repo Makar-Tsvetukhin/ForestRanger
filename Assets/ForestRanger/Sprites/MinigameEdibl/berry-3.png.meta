@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bf79e0dce7fe5e749bef36687a000e5f
+guid: 0794e72a2cdd29a41b59fbbc79bd13b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7016001140570266125
-    second: berry-4_0
+      213: 2995866042335999562
+    second: berry-3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: berry-4_0
+      name: berry-3_0
       rect:
         serializedVersion: 2
-        x: 56
-        y: 47
-        width: 179
-        height: 208
+        x: 51
+        y: 4
+        width: 209
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d0a1d6f6dd7dd5160800000000000000
-      internalID: 7016001140570266125
+      spriteID: a46b710fa44739920800000000000000
+      internalID: 2995866042335999562
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      berry-4_0: 7016001140570266125
+      berry-3_0: 2995866042335999562
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

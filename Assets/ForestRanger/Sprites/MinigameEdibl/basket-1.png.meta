@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 33b9f49b501a46d4ba0a8b57bd6fb930
+guid: 8cac225a89f89d14990aa41e4bc54d7b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3143116698090500634
-    second: props-2_0
+      213: 7837354295253670473
+    second: basket-1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: props-2_0
+      name: basket-1_0
       rect:
         serializedVersion: 2
-        x: 41
-        y: 13
-        width: 636
-        height: 685
+        x: 23
+        y: 40
+        width: 671
+        height: 658
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a127845ebf79e9b20800000000000000
-      internalID: 3143116698090500634
+      spriteID: 94a1a7b1530e3cc60800000000000000
+      internalID: 7837354295253670473
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      props-2_0: 3143116698090500634
+      basket-1_0: 7837354295253670473
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
