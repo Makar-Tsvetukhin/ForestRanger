@@ -11,10 +11,12 @@ public class RangerOpenScene : MonoBehaviour
 	[field: SerializeField] public int GameIndex;
 	[field: SerializeField] public MovementPoint ThisMovementPoint { get; private set; }
 	private MinigameHandler mHandler;
+	private RangerHandler rHandler;
 
 	private void Start()
 	{
 		mHandler = GameObject.FindGameObjectWithTag("MinigameHandler").GetComponent<MinigameHandler>();
+		rHandler = GameObject.FindGameObjectWithTag("RangerHandler").GetComponent<RangerHandler>();
 		CheckMinigameEnding();
 	}
 
@@ -36,14 +38,13 @@ public class RangerOpenScene : MonoBehaviour
 
 	private void CheckLoadScene()
 	{
-		if (mHandler.GetGameStatus(GameIndex) != 0 && GameIsEnd != null)
+		if (mHandler.GetGameStatus(GameIndex) != 0 && !GetComponent<ChangeSprite>().IsOneTimeGame)
 		{
-			GameIsEnd.SetActive(true);
-			GameIsEnd.GetComponentInChildren<TextMeshProUGUI>().text = "Задание уже закончено";
+
 		}
 		else
 		{
-			mHandler.SaveCurrentMovementPoint(ThisMovementPoint.ID);
+			rHandler.SaveCurrentMovementPoint(rHandler.ForestRangerID, ThisMovementPoint.ID);
 			StartCoroutine(LoadScene(SceneName));
 		}
 	}

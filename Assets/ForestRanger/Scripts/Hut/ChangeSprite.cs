@@ -10,7 +10,7 @@ public class ChangeSprite : MonoBehaviour
 	[field: SerializeField] private Sprite Lose;
 	[field: SerializeField] private int GameIndex;
 	[field: SerializeField] private SpriteRenderer spriteRender;
-	[field: SerializeField] private bool IsOneTimeGame;
+	[field: SerializeField] public bool IsOneTimeGame { get; private set; }
 	private MinigameHandler mHandler;
 	private CircleCollider2D Collider;
 
@@ -45,7 +45,6 @@ public class ChangeSprite : MonoBehaviour
 	public void IsDoTask()
 	{
 		spriteRender.sprite = Do;
-		//if (IsOneTimeGame) Collider.enabled = false;
 	}
 
 	public void IsNotDoTask()
@@ -56,6 +55,5 @@ public class ChangeSprite : MonoBehaviour
 	public void IsLoseTask()
 	{
 		spriteRender.sprite = Lose;
-		//if (IsOneTimeGame) Collider.enabled = false;
 	}
 }

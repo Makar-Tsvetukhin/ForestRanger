@@ -10,6 +10,8 @@ using UnityEngine.UI;
 public class Ranger : MonoBehaviour
 {
 	[field: SerializeField] private OpenCloseMagnifier Magnifier;
+	[field: SerializeField] public int ID { get; private set; }
+	private RangerHandler rHandler;
 	private RangerOpenScene NewOpenScene;
 	private RaycastHit2D hit;
 	private RaycastHit2D Hit;
@@ -19,6 +21,7 @@ public class Ranger : MonoBehaviour
 	private bool IsEventClose = false;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+	private Timer OpenSceneTimer;
 
 	private List<MovementPoint> MovementPoints = new List<MovementPoint>();
 	private List<MovementPoint> CurrentMovementPoints = new List<MovementPoint>();
@@ -33,14 +36,24 @@ public class Ranger : MonoBehaviour
 
 	private void Awake()
 	{
+		rHandler = GameObject.FindGameObjectWithTag("RangerHandler").GetComponent<RangerHandler>();
+
 		foreach (var movementPoint in GameObject.FindGameObjectsWithTag("MovementPoint"))
 		{
 			MovementPoints.Add(movementPoint.GetComponent<MovementPoint>());
-			if (movementPoint.GetComponent<MovementPoint>().ID == 0) CurrentMovementPoint = movementPoint.GetComponent<MovementPoint>();
+			if (movementPoint.GetComponent<MovementPoint>().ID == 0)
+			{
+				CurrentMovementPoint = movementPoint.GetComponent<MovementPoint>();
+				transform.position = CurrentMovementPoint.transform.position;
+			}
 		}
 
 		animator = GetComponent<Animator>();
 		spriteRenderer = GetComponent<SpriteRenderer>();
+
+		OpenSceneTimer = new Timer(0.2f);
+		OpenSceneTimer.SetPause();
+		OpenSceneTimer.OnTimerEnd += OpenScene;
 	}
 
 	public void ChangeCurrentPoint(int currentPointID)
@@ -51,11 +64,22 @@ public class Ranger : MonoBehaviour
 			{
 				CurrentMovementPoint = movementPoint;
 				transform.position = CurrentMovementPoint.transform.position;
-				Debug.Log("Z");
 				return;
 			}
 		}
 
+	}
+
+	private void OpenScene()
+	{
+		OpenSceneTimer.ResetTimer(true);
+		NewOpenScene.LoadNewScene();
+	}
+
+
+	private void FixedUpdate()
+	{
+		OpenSceneTimer.Tick(Time.deltaTime);
 	}
 
 	private void Update()
@@ -111,11 +135,6 @@ public class Ranger : MonoBehaviour
 					{
 						animator.SetBool("IsWalk", true);
 					}
-
-					if (spriteRenderer != null)
-                    {
-                        spriteRenderer.flipX = TargetPosition.x < transform.position.x;
-                    }
                 }
 			}
 			else
@@ -127,11 +146,16 @@ public class Ranger : MonoBehaviour
 			}
 		}
 
-		if (IsMoving && CurrentMovementPointCount != MinCurrentMovementPoints.Count) 
+		if (/*IsMoving && */CurrentMovementPointCount != MinCurrentMovementPoints.Count) 
 		{
 			TargetPosition = MinCurrentMovementPoints[CurrentMovementPointCount].ThisPosition;
 
 			transform.position = Vector2.MoveTowards(transform.position, TargetPosition, Time.deltaTime * 3);
+
+			if (spriteRenderer != null)
+			{
+				spriteRenderer.flipX = TargetPosition.x < transform.position.x;
+			}
 
 			if (transform.position == TargetPosition)
 			{
@@ -146,7 +170,7 @@ public class Ranger : MonoBehaviour
 					if (hit.collider != null && hit.transform.gameObject.GetComponent<RangerOpenScene>() != null)
 					{
 						hit = new RaycastHit2D();
-						NewOpenScene.LoadNewScene();
+						OpenSceneTimer.Continue();
 					}
 				}
 			}
@@ -164,6 +188,7 @@ public class Ranger : MonoBehaviour
 	{
 		if (currentPoint.ID == finalPointID && !IsMoving)
 		{
+			MinCurrentMovementPoints.Add(currentPoint);
 			return;
 		}
 

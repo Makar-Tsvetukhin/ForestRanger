@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 public class MinigameHandler : MonoBehaviour
 {
 	[field: SerializeField] private string MainGameElementTag;
+	[field: SerializeField] private RangerHandler RangerManager;
 	private static MinigameHandler Instance;
 	private List<int> MiniGamesEnd = new List<int>();
 	private MinigameState GameState;
-	private int RangerCurrentPointID = -1;
 
 	public event Action OnUpdate;
 	public event Action OnNewScene;
@@ -18,7 +18,6 @@ public class MinigameHandler : MonoBehaviour
 
 	private void Awake()
 	{
-
 		if (Instance == null)
 		{
 			Instance = this;
@@ -26,7 +25,7 @@ public class MinigameHandler : MonoBehaviour
 
 			SceneManager.sceneLoaded += NewSceneLoad;
 
-			for (int i = 0; i < 5; i++) MiniGamesEnd.Add(0);
+			for (int i = 0; i < 7; i++) MiniGamesEnd.Add(0);
 		}
 		else
 		{
@@ -71,20 +70,8 @@ public class MinigameHandler : MonoBehaviour
 		for (int i = 0; i < 5; i++) MiniGamesEnd[i] = 0;
 	}
 
-	public void SaveCurrentMovementPoint(int currentPointID)
-	{
-		Instance.RangerCurrentPointID = currentPointID;
-		Debug.Log($"Точка получена {Instance.RangerCurrentPointID}");
-	}
-
 	private void NewSceneLoad(Scene scene, LoadSceneMode mode)
 	{
-		if (GameObject.FindGameObjectWithTag("Player") != null && Instance.RangerCurrentPointID != -1)
-		{
-			GameObject.FindGameObjectWithTag("Player").GetComponent<Ranger>().ChangeCurrentPoint(Instance.RangerCurrentPointID);
-		}
-		Debug.Log(Instance.RangerCurrentPointID);
-
 		if (GameObject.FindGameObjectWithTag(MainGameElementTag) == null) return;
 
 		GameState = GameObject.FindGameObjectWithTag(MainGameElementTag).GetComponent<MinigameState>();

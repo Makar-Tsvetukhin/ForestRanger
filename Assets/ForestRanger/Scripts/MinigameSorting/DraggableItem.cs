@@ -4,7 +4,6 @@ public class DraggableItem : MonoBehaviour
 {
     private Vector3 _startPosition;
     private bool _isDragging = false;
-    private bool IsOnTarget = false;
 
     void Start()
     {
@@ -25,22 +24,6 @@ public class DraggableItem : MonoBehaviour
             transform.position = new Vector3(mousePos.x, mousePos.y, transform.position.z);
         }
     }
-
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.gameObject.CompareTag("edibl") || collision.CompareTag("inedible"))
-        {
-            IsOnTarget = true;
-        }
-	}
-
-	private void OnTriggerExit2D(Collider2D collision)
-	{
-		if (collision.gameObject.CompareTag("edibl") || collision.CompareTag("inedible"))
-		{
-			IsOnTarget = false;
-		}
-	}
 
 	void OnMouseUp()
     {

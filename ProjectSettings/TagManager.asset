@@ -15,6 +15,7 @@ TagManager:
   - Node
   - Background
   - MovementPoint
+  - RangerHandler
   layers:
   - Default
   - TransparentFX
