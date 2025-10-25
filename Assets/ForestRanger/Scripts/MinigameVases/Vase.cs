@@ -51,10 +51,6 @@ public class Vase : MonoBehaviour, IPointerClickHandler
 
 		_Sweet.GetComponent<Sweet>().Guess();
 
-		Debug.Log("Ваза поднимается");
-		//IsDown = false;
-		//IsUp = true;
-
 		OnGameEnd?.Invoke();
 	}
 
@@ -64,8 +60,6 @@ public class Vase : MonoBehaviour, IPointerClickHandler
 
 		if (IsUp && IsSweetThere)
 		{
-			/*transform.position = Vector3.MoveTowards(transform.position, new Vector3(StartPosition.x, StartPosition.y + 2, StartPosition.z), 0.01f);
-			if (transform.position == new Vector3(StartPosition.x, StartPosition.y + 2, StartPosition.z)) InUpTimer.Continue();*/
 			Debug.Log(_Sweet.transform.position);
 			_Sweet.transform.position = Vector3.MoveTowards(_Sweet.transform.position, new Vector3(SweetPlace.transform.position.x, SweetPlace.transform.position.y + 2, SweetPlace.transform.position.z), 0.01f);
 			if (_Sweet.transform.position == new Vector3(SweetPlace.transform.position.x, SweetPlace.transform.position.y + 2, SweetPlace.transform.position.z)) InUpTimer.Continue();
@@ -73,7 +67,6 @@ public class Vase : MonoBehaviour, IPointerClickHandler
 
 		if (IsDown && IsSweetThere)
 		{
-			//transform.position = Vector3.MoveTowards(transform.position, StartPosition, 0.01f);
 			_Sweet.transform.position = Vector3.MoveTowards(_Sweet.transform.position, SweetPlace.transform.position, 0.01f);
 		}
 	}

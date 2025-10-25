@@ -38,15 +38,15 @@ public class RangerOpenScene : MonoBehaviour
 
 	private void CheckLoadScene()
 	{
-		if (mHandler.GetGameStatus(GameIndex) != 0 && !GetComponent<ChangeSprite>().IsOneTimeGame)
+		/*if (mHandler.GetGameStatus(GameIndex) != 0 && !GetComponent<ChangeSprite>().IsOneTimeGame)
 		{
 
 		}
 		else
-		{
+		{*/
 			rHandler.SaveCurrentMovementPoint(rHandler.ForestRangerID, ThisMovementPoint.ID);
 			StartCoroutine(LoadScene(SceneName));
-		}
+		//}
 	}
 
 	public string GetSceneName()

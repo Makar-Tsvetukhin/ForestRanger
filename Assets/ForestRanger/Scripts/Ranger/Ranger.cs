@@ -146,7 +146,7 @@ public class Ranger : MonoBehaviour
 			}
 		}
 
-		if (/*IsMoving && */CurrentMovementPointCount != MinCurrentMovementPoints.Count) 
+		if (CurrentMovementPointCount != MinCurrentMovementPoints.Count) 
 		{
 			TargetPosition = MinCurrentMovementPoints[CurrentMovementPointCount].ThisPosition;
 

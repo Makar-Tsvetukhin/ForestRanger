@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ForestRanger/Scenes/PigGame.unity
     guid: 01181c40309b56245b3d2d27408e33b3
+  - enabled: 1
+    path: Assets/ForestRanger/Scenes/PuzzleVillageScene.unity
+    guid: ddaef4f4938b4bc49b35c1cff8fe3496
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 9abe5121ac865f44c8adbd735c23f40e, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 49a6360f813af71478ef0fd1ffd16848, type: 2}
