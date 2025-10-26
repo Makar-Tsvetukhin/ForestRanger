@@ -3,7 +3,7 @@ using UnityEngine;
 public class DraggableItem : MonoBehaviour
 {
     private Vector3 _startPosition;
-    private bool _isDragging;
+    private bool _isDragging = false;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class DraggableItem : MonoBehaviour
         }
     }
 
-    void OnMouseUp()
+	void OnMouseUp()
     {
         if (!_isDragging) return;
         _isDragging = false;

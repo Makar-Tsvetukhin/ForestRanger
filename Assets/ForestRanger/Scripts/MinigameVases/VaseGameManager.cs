@@ -11,6 +11,7 @@ public class VaseGameManager : MonoBehaviour
 	[field: SerializeField] private PlayableAsset[] Timelines;
 	[field: SerializeField] private Vase[] _Vase;
 	[field: SerializeField] private GameObject SweetObject;
+	private MinigameState minigameState;
 	private Sweet _Sweet;
 	private int RandomMixing;
 
@@ -22,6 +23,7 @@ public class VaseGameManager : MonoBehaviour
 
 		_Vase[1].OnGameEnd += GameEnd;
 
+		minigameState = GetComponent<MinigameState>();
 	}
 
 	private void StartMixing()
@@ -70,13 +72,11 @@ public class VaseGameManager : MonoBehaviour
 	
 	private void GameEnd()
 	{
-		Debug.Log("Ты угадал!");
+		minigameState.WinGame();
 	}
 
 	public void Guess()
 	{
-		Debug.Log("Выбирай!");
-
 		for (int i = 0; i < 3; i++)
 		{
 			_Vase[i].EndMixing();

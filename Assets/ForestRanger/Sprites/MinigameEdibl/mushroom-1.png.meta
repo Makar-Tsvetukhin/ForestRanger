@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f170c1cf399c887438e48b855b493759
+guid: 350a8f8bf4ab4c34eab809e052013fbd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1396158359887089963
-    second: berry-1_0
+      213: -1061791813613257830
+    second: mushroom-1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: berry-1_0
+      name: mushroom-1_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 28
-        width: 267
-        height: 235
+        x: 58
+        y: 23
+        width: 180
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b21134391a6206310800000000000000
-      internalID: 1396158359887089963
+      spriteID: a9bf92c98f1c341f0800000000000000
+      internalID: -1061791813613257830
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      berry-1_0: 1396158359887089963
+      mushroom-1_0: -1061791813613257830
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

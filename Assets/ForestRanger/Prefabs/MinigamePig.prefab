@@ -238,7 +238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName: PigGame
   GameIsEnd: {fileID: 0}
-  GameIndex: 1
+  GameIndex: 6
+  <ThisMovementPoint>k__BackingField: {fileID: 0}
 --- !u!114 &3193929502113836261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,8 +256,9 @@ MonoBehaviour:
   NotDo: {fileID: 579398220, guid: d57b8aae0b0fc514bbb2109a3f18219b, type: 3}
   Do: {fileID: 579398220, guid: d57b8aae0b0fc514bbb2109a3f18219b, type: 3}
   Lose: {fileID: 579398220, guid: d57b8aae0b0fc514bbb2109a3f18219b, type: 3}
-  GameIndex: 1
+  GameIndex: 6
   spriteRender: {fileID: 1775617902289861152}
+  IsOneTimeGame: 0
 --- !u!58 &1591722594392420145
 CircleCollider2D:
   m_ObjectHideFlags: 0

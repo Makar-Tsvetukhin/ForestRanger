@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -970120351865249870}
   - component: {fileID: 6637269441860691852}
   m_Layer: 0
-  m_Name: MinigamePuzzle
+  m_Name: MinigamePuzzle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,9 +103,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53d55837515eed44a6f5c87891d2bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: PuzzleExamScene
+  SceneName: PuzzleVillageScene
   GameIsEnd: {fileID: 0}
-  GameIndex: 2
+  GameIndex: 7
+  <ThisMovementPoint>k__BackingField: {fileID: 0}
 --- !u!114 &-970120351865249870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,9 +123,9 @@ MonoBehaviour:
   NotDo: {fileID: -5796681024104259944, guid: 6f8e92aaea36c2747ba266fea41ce46e, type: 3}
   Do: {fileID: -8842615605006729978, guid: 0a315564f44040641aaa9b4db9e07f5e, type: 3}
   Lose: {fileID: -5796681024104259944, guid: 05a30643f1b819e46a0c4e8c868ebb97, type: 3}
-  GameIndex: 2
+  GameIndex: 7
   spriteRender: {fileID: 9216342050755738735}
-  IsOneTimeGame: 1
+  <IsOneTimeGame>k__BackingField: 0
 --- !u!58 &6637269441860691852
 CircleCollider2D:
   m_ObjectHideFlags: 0

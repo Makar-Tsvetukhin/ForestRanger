@@ -14,6 +14,8 @@ TagManager:
   - EndMinigame
   - Node
   - Background
+  - MovementPoint
+  - RangerHandler
   layers:
   - Default
   - TransparentFX

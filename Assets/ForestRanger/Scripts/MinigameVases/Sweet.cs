@@ -2,9 +2,11 @@ using System;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Sweet : MonoBehaviour
 {
+	[field: SerializeField] private List<Sprite> SweetSprites;
 	private GameObject SweetPlace;
 	private Rigidbody2D Rigidbody;
 	private Vector3 StartPosition;
@@ -13,7 +15,12 @@ public class Sweet : MonoBehaviour
 
 	public event Action InVase;
 
-	 
+
+	private void Awake()
+	{
+		GetComponent<SpriteRenderer>().sprite = SweetSprites[UnityEngine.Random.Range(0, SweetSprites.Count)];
+	}
+
 	private void Start()
 	{
 		StartPosition = transform.position;

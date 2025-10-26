@@ -124,6 +124,7 @@ MonoBehaviour:
   Lose: {fileID: -3421325543657207850, guid: 8cde07186735ef147877f179056406a1, type: 3}
   GameIndex: 1
   spriteRender: {fileID: 9216342050755738735}
+  IsOneTimeGame: 1
 --- !u!58 &6637269441860691852
 CircleCollider2D:
   m_ObjectHideFlags: 0

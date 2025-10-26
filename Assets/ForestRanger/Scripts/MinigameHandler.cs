@@ -7,16 +7,17 @@ using UnityEngine.SceneManagement;
 public class MinigameHandler : MonoBehaviour
 {
 	[field: SerializeField] private string MainGameElementTag;
+	[field: SerializeField] private RangerHandler RangerManager;
 	private static MinigameHandler Instance;
 	private List<int> MiniGamesEnd = new List<int>();
 	private MinigameState GameState;
 
 	public event Action OnUpdate;
+	public event Action OnNewScene;
 
 
 	private void Awake()
 	{
-
 		if (Instance == null)
 		{
 			Instance = this;
@@ -24,7 +25,7 @@ public class MinigameHandler : MonoBehaviour
 
 			SceneManager.sceneLoaded += NewSceneLoad;
 
-			for (int i = 0; i < 5; i++) MiniGamesEnd.Add(0);
+			for (int i = 0; i < 8; i++) MiniGamesEnd.Add(0);
 		}
 		else
 		{
@@ -78,5 +79,7 @@ public class MinigameHandler : MonoBehaviour
 		if (MiniGamesEnd[GameState.GetGameIndex()] == 1) GameState.LoadWinGame();
 
 		if (MiniGamesEnd[GameState.GetGameIndex()] == -1) GameState.LoadLoseGame();
+
+		OnNewScene?.Invoke();
 	}
 }

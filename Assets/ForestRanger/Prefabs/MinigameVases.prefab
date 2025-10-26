@@ -105,7 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName: VasesGameScene
   GameIsEnd: {fileID: 0}
-  GameIndex: 0
+  GameIndex: 5
+  <ThisMovementPoint>k__BackingField: {fileID: 0}
 --- !u!114 &-970120351865249870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,8 +123,9 @@ MonoBehaviour:
   NotDo: {fileID: -4192747849017886078, guid: d57b8aae0b0fc514bbb2109a3f18219b, type: 3}
   Do: {fileID: -4192747849017886078, guid: d57b8aae0b0fc514bbb2109a3f18219b, type: 3}
   Lose: {fileID: -4192747849017886078, guid: d57b8aae0b0fc514bbb2109a3f18219b, type: 3}
-  GameIndex: 0
+  GameIndex: 5
   spriteRender: {fileID: 9216342050755738735}
+  IsOneTimeGame: 0
 --- !u!58 &6637269441860691852
 CircleCollider2D:
   m_ObjectHideFlags: 0
