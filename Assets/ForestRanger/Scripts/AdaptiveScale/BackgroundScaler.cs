@@ -7,21 +7,15 @@ public class BackgroundScaler : MonoBehaviour
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        ScaleBackground();
+        ScaleBackgroundByHeight();
     }
 
-    private void ScaleBackground()
+    private void ScaleBackgroundByHeight()
     {
-        float cameraHeight = Camera.main.orthographicSize * 2;
-        float cameraWidth = cameraHeight * Camera.main.aspect;
-
-        float spriteWidth = _spriteRenderer.sprite.bounds.size.x;
+        float cameraHeight = Camera.main.orthographicSize * 2f;
         float spriteHeight = _spriteRenderer.sprite.bounds.size.y;
 
-        float scaleX = cameraWidth / spriteWidth;
-        float scaleY = cameraHeight / spriteHeight;
-
-        float maxScale = Mathf.Max(scaleX, scaleY);
-        transform.localScale = new Vector3(maxScale, maxScale, 1);
+        float scale = cameraHeight / spriteHeight;
+        transform.localScale = new Vector3(scale, scale, 1);
     }
 }
