@@ -7,16 +7,18 @@ public class Hut : MonoBehaviour
     private MinigameState GameState;
     private int DoneCount;
 
+    [SerializeField] private AudioSource completeSound;
+
     public IReadOnlyList<Placement> GetPlacements() => Placements;
 
     private void Start()
     {
-		GameState = GetComponent<MinigameState>();
-
-		DoneCount = 0;
+        GameState = GetComponent<MinigameState>();
+        DoneCount = 0;
         Placements.AddRange(transform.GetComponentsInChildren<Placement>());
 
-        for (int i = 0; i < Placements.Count; i++) Placements[i].OnPiecePlaced += CheckDone;
+        for (int i = 0; i < Placements.Count; i++)
+            Placements[i].OnPiecePlaced += CheckDone;
     }
 
     public void CheckDone()
@@ -24,12 +26,14 @@ public class Hut : MonoBehaviour
         DoneCount = 0;
         foreach (var placement in Placements)
         {
-            if (placement.CheckDone()) DoneCount++;
+            if (placement.CheckDone())
+            {
+                DoneCount++;
+                if (completeSound != null) completeSound.Play();
+            }
         }
 
         if (DoneCount == Placements.Count)
-        {
             GameState.WinGame();
-        }
     }
 }

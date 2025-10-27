@@ -29,7 +29,7 @@ public class MinigameHandler : MonoBehaviour
 		}
 		else
 		{
-			Destroy(gameObject); // Удаляем дубликаты
+			Destroy(gameObject); 
 		}
 	}
 
