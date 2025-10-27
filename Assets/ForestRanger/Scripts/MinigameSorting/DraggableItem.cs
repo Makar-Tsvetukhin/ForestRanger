@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class DraggableItem : MonoBehaviour
 {
+    [Header("Audio Sources")]
+    [SerializeField] private AudioSource pickUpSound;           
+    [SerializeField] private AudioSource dropOnEdibleSound;     
+    [SerializeField] private AudioSource dropOnInedibleSound;   
+
     private Vector3 _startPosition;
     private bool _isDragging = false;
 
@@ -12,8 +17,12 @@ public class DraggableItem : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (gameObject.activeSelf)
-            _isDragging = true;
+        if (!gameObject.activeSelf) return;
+
+        _isDragging = true;
+
+        if (pickUpSound != null)
+            pickUpSound.Play();
     }
 
     void OnMouseDrag()
@@ -25,7 +34,7 @@ public class DraggableItem : MonoBehaviour
         }
     }
 
-	void OnMouseUp()
+    void OnMouseUp()
     {
         if (!_isDragging) return;
         _isDragging = false;
@@ -35,8 +44,14 @@ public class DraggableItem : MonoBehaviour
         {
             if (collider.CompareTag("edibl") || collider.CompareTag("inedible"))
             {
-                bool isCorrect = (collider.CompareTag("edibl") && gameObject.CompareTag("food")) ||
-                                (collider.CompareTag("inedible") && gameObject.CompareTag("trash"));
+                bool isCorrect =
+                    (collider.CompareTag("edibl") && gameObject.CompareTag("food")) ||
+                    (collider.CompareTag("inedible") && gameObject.CompareTag("trash"));
+
+                if (collider.CompareTag("edibl") && dropOnEdibleSound != null)
+                    dropOnEdibleSound.Play();
+                else if (collider.CompareTag("inedible") && dropOnInedibleSound != null)
+                    dropOnInedibleSound.Play();
 
                 gameObject.SetActive(false);
                 FindObjectOfType<FoodSortingManager>().OnItemMoved(isCorrect);
