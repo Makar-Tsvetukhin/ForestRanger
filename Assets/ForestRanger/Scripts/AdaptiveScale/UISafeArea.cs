@@ -1,19 +1,22 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class UISafeArea : MonoBehaviour
+[RequireComponent(typeof(RectTransform))]
+public class UISafeAreaOverlay : MonoBehaviour
 {
-    private RectTransform _rect;
+    [SerializeField] private SpriteRenderer background;
+
+    private RectTransform rect;
 
     private void Awake()
     {
-        _rect = GetComponent<RectTransform>();
-        ApplySafeArea();
+        rect = GetComponent<RectTransform>();
+        ApplyAdjustedSafeArea();
     }
 
-    private void ApplySafeArea()
+    private void ApplyAdjustedSafeArea()
     {
         Rect safeArea = Screen.safeArea;
+
         Vector2 anchorMin = safeArea.position;
         Vector2 anchorMax = safeArea.position + safeArea.size;
 
@@ -22,7 +25,21 @@ public class UISafeArea : MonoBehaviour
         anchorMax.x /= Screen.width;
         anchorMax.y /= Screen.height;
 
-        _rect.anchorMin = anchorMin;
-        _rect.anchorMax = anchorMax;
+        rect.anchorMin = anchorMin;
+        rect.anchorMax = anchorMax;
+
+        if (background == null) return;
+
+        float spriteAspect = background.sprite.bounds.size.x / background.sprite.bounds.size.y;
+        float screenAspect = (float)Screen.width / Screen.height;
+
+        if (screenAspect > spriteAspect)
+        {
+            float visiblePercent = spriteAspect / screenAspect;
+            float sideOffset = (1f - visiblePercent) / 2f;
+
+            rect.anchorMin = new Vector2(sideOffset, rect.anchorMin.y);
+            rect.anchorMax = new Vector2(1f - sideOffset, rect.anchorMax.y);
+        }
     }
 }
