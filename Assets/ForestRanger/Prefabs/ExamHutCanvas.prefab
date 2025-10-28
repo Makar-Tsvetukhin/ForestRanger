@@ -1842,7 +1842,7 @@ RectTransform:
   m_Children:
   - {fileID: 3325690258390099964}
   - {fileID: 8143911575233153176}
-  m_Father: {fileID: 6141915415226674220}
+  m_Father: {fileID: 7575819982216756466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -2105,6 +2105,7 @@ RectTransform:
   - {fileID: 2410876410394770486}
   - {fileID: 2275235838654193738}
   - {fileID: 4920531396625295178}
+  - {fileID: 3858763151785953204}
   m_Father: {fileID: 6141915415226674220}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2124,6 +2125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919bc4d2244e8994abda1987121730c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 0}
 --- !u!1 &6238898750171593177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2985,7 +2987,6 @@ RectTransform:
   - {fileID: 169545537775358732}
   - {fileID: 2534825442533514267}
   - {fileID: 7575819982216756466}
-  - {fileID: 3858763151785953204}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
